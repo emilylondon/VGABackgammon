@@ -1,0 +1,1708 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+| Date         : Sun Apr  5 11:05:52 2020
+| Host         : GDESK-104 running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -max_paths 10 -file vga_top_timing_summary_routed.rpt -pb vga_top_timing_summary_routed.pb -rpx vga_top_timing_summary_routed.rpx -warn_on_violation
+| Design       : vga_top
+| Device       : 7a100t-csg324
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock
+2. checking constant_clock
+3. checking pulse_width_clock
+4. checking unconstrained_internal_endpoints
+5. checking no_input_delay
+6. checking no_output_delay
+7. checking multiple_clock
+8. checking generated_clocks
+9. checking loops
+10. checking partial_input_delay
+11. checking partial_output_delay
+12. checking latch_loops
+
+1. checking no_clock
+--------------------
+ There are 21 register/latch pins with no clock driven by root clock pin: dc/clk25_reg/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: dc/pulse_reg/Q (HIGH)
+
+
+2. checking constant_clock
+--------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock
+-----------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints
+--------------------------------------------
+ There are 47 pins that are not constrained for maximum delay. (HIGH)
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay
+--------------------------
+ There is 1 input port with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay
+---------------------------
+ There are 25 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock
+--------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks
+----------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops
+-----------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay
+--------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay
+---------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops
+------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+      2.120        0.000                      0                  185        0.190        0.000                      0                  185        4.500        0.000                       0                   100  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock    Waveform(ns)       Period(ns)      Frequency(MHz)
+-----    ------------       ----------      --------------
+ClkPort  {0.000 5.000}      10.000          100.000         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+ClkPort             2.120        0.000                      0                  185        0.190        0.000                      0                  185        4.500        0.000                       0                   100  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  ClkPort
+  To Clock:  ClkPort
+
+Setup :            0  Failing Endpoints,  Worst Slack        2.120ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.190ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        4.500ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             2.120ns  (required time - arrival time)
+  Source:                 vbc/greenMiddleSquareSpeed_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vbc/greenMiddleSquareY_reg[2]/R
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ClkPort
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ClkPort rise@10.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        7.285ns  (logic 3.209ns (44.050%)  route 4.076ns (55.950%))
+  Logic Levels:           15  (CARRY4=11 LUT4=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.036ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.033ns = ( 15.033 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.328ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          1.725     5.328    vbc/ClkPort_IBUF_BUFG
+    SLICE_X80Y98         FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X80Y98         FDRE (Prop_fdre_C_Q)         0.518     5.846 r  vbc/greenMiddleSquareSpeed_reg[1]/Q
+                         net (fo=2, routed)           0.687     6.533    vbc/greenMiddleSquareSpeed_reg[1]
+    SLICE_X82Y98         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.656     7.189 r  vbc/greenMiddleSquareSpeed_reg[0]_i_26/CO[3]
+                         net (fo=1, routed)           0.000     7.189    vbc/greenMiddleSquareSpeed_reg[0]_i_26_n_0
+    SLICE_X82Y99         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.303 r  vbc/greenMiddleSquareSpeed_reg[0]_i_14/CO[3]
+                         net (fo=1, routed)           0.001     7.304    vbc/greenMiddleSquareSpeed_reg[0]_i_14_n_0
+    SLICE_X82Y100        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.418 r  vbc/greenMiddleSquareSpeed_reg[0]_i_12/CO[3]
+                         net (fo=1, routed)           0.000     7.418    vbc/greenMiddleSquareSpeed_reg[0]_i_12_n_0
+    SLICE_X82Y101        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.532 r  vbc/greenMiddleSquareSpeed_reg[0]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     7.532    vbc/greenMiddleSquareSpeed_reg[0]_i_6_n_0
+    SLICE_X82Y102        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.646 r  vbc/greenMiddleSquareSpeed_reg[0]_i_11/CO[3]
+                         net (fo=1, routed)           0.000     7.646    vbc/greenMiddleSquareSpeed_reg[0]_i_11_n_0
+    SLICE_X82Y103        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.760 r  vbc/greenMiddleSquareSpeed_reg[0]_i_18/CO[3]
+                         net (fo=1, routed)           0.000     7.760    vbc/greenMiddleSquareSpeed_reg[0]_i_18_n_0
+    SLICE_X82Y104        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.874 r  vbc/greenMiddleSquareSpeed_reg[0]_i_19/CO[3]
+                         net (fo=1, routed)           0.000     7.874    vbc/greenMiddleSquareSpeed_reg[0]_i_19_n_0
+    SLICE_X82Y105        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.988 r  vbc/greenMiddleSquareSpeed_reg[0]_i_25/CO[3]
+                         net (fo=1, routed)           0.000     7.988    vbc/greenMiddleSquareSpeed_reg[0]_i_25_n_0
+    SLICE_X82Y106        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.102 r  vbc/greenMiddleSquareSpeed_reg[0]_i_28/CO[3]
+                         net (fo=1, routed)           0.000     8.102    vbc/greenMiddleSquareSpeed_reg[0]_i_28_n_0
+    SLICE_X82Y107        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.216 r  vbc/greenMiddleSquareSpeed_reg[0]_i_16/CO[3]
+                         net (fo=1, routed)           0.000     8.216    vbc/greenMiddleSquareSpeed_reg[0]_i_16_n_0
+    SLICE_X82Y108        CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     8.550 r  vbc/greenMiddleSquareSpeed_reg[0]_i_27/O[1]
+                         net (fo=1, routed)           0.585     9.135    vbc/p_0_in[42]
+    SLICE_X87Y106        LUT4 (Prop_lut4_I1_O)        0.303     9.438 r  vbc/greenMiddleSquareSpeed[0]_i_20/O
+                         net (fo=1, routed)           0.407     9.845    vbc/greenMiddleSquareSpeed[0]_i_20_n_0
+    SLICE_X87Y106        LUT5 (Prop_lut5_I4_O)        0.124     9.969 r  vbc/greenMiddleSquareSpeed[0]_i_9/O
+                         net (fo=1, routed)           1.009    10.978    vbc/greenMiddleSquareSpeed[0]_i_9_n_0
+    SLICE_X83Y102        LUT6 (Prop_lut6_I4_O)        0.124    11.102 r  vbc/greenMiddleSquareSpeed[0]_i_3/O
+                         net (fo=61, routed)          0.773    11.875    vbc/greenMiddleSquareSpeed[0]_i_1_n_0
+    SLICE_X84Y97         LUT6 (Prop_lut6_I1_O)        0.124    11.999 r  vbc/greenMiddleSquareY[9]_i_1/O
+                         net (fo=10, routed)          0.614    12.613    vbc/greenMiddleSquareY
+    SLICE_X84Y96         FDRE                                         r  vbc/greenMiddleSquareY_reg[2]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)   10.000    10.000 r  
+    E3                                                0.000    10.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000    10.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           1.920    13.331    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          1.610    15.033    vbc/ClkPort_IBUF_BUFG
+    SLICE_X84Y96         FDRE                                         r  vbc/greenMiddleSquareY_reg[2]/C
+                         clock pessimism              0.259    15.292    
+                         clock uncertainty           -0.035    15.256    
+    SLICE_X84Y96         FDRE (Setup_fdre_C_R)       -0.524    14.732    vbc/greenMiddleSquareY_reg[2]
+  -------------------------------------------------------------------
+                         required time                         14.732    
+                         arrival time                         -12.613    
+  -------------------------------------------------------------------
+                         slack                                  2.120    
+
+Slack (MET) :             2.120ns  (required time - arrival time)
+  Source:                 vbc/greenMiddleSquareSpeed_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vbc/greenMiddleSquareY_reg[5]/R
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ClkPort
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ClkPort rise@10.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        7.285ns  (logic 3.209ns (44.050%)  route 4.076ns (55.950%))
+  Logic Levels:           15  (CARRY4=11 LUT4=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.036ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.033ns = ( 15.033 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.328ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          1.725     5.328    vbc/ClkPort_IBUF_BUFG
+    SLICE_X80Y98         FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X80Y98         FDRE (Prop_fdre_C_Q)         0.518     5.846 r  vbc/greenMiddleSquareSpeed_reg[1]/Q
+                         net (fo=2, routed)           0.687     6.533    vbc/greenMiddleSquareSpeed_reg[1]
+    SLICE_X82Y98         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.656     7.189 r  vbc/greenMiddleSquareSpeed_reg[0]_i_26/CO[3]
+                         net (fo=1, routed)           0.000     7.189    vbc/greenMiddleSquareSpeed_reg[0]_i_26_n_0
+    SLICE_X82Y99         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.303 r  vbc/greenMiddleSquareSpeed_reg[0]_i_14/CO[3]
+                         net (fo=1, routed)           0.001     7.304    vbc/greenMiddleSquareSpeed_reg[0]_i_14_n_0
+    SLICE_X82Y100        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.418 r  vbc/greenMiddleSquareSpeed_reg[0]_i_12/CO[3]
+                         net (fo=1, routed)           0.000     7.418    vbc/greenMiddleSquareSpeed_reg[0]_i_12_n_0
+    SLICE_X82Y101        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.532 r  vbc/greenMiddleSquareSpeed_reg[0]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     7.532    vbc/greenMiddleSquareSpeed_reg[0]_i_6_n_0
+    SLICE_X82Y102        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.646 r  vbc/greenMiddleSquareSpeed_reg[0]_i_11/CO[3]
+                         net (fo=1, routed)           0.000     7.646    vbc/greenMiddleSquareSpeed_reg[0]_i_11_n_0
+    SLICE_X82Y103        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.760 r  vbc/greenMiddleSquareSpeed_reg[0]_i_18/CO[3]
+                         net (fo=1, routed)           0.000     7.760    vbc/greenMiddleSquareSpeed_reg[0]_i_18_n_0
+    SLICE_X82Y104        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.874 r  vbc/greenMiddleSquareSpeed_reg[0]_i_19/CO[3]
+                         net (fo=1, routed)           0.000     7.874    vbc/greenMiddleSquareSpeed_reg[0]_i_19_n_0
+    SLICE_X82Y105        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.988 r  vbc/greenMiddleSquareSpeed_reg[0]_i_25/CO[3]
+                         net (fo=1, routed)           0.000     7.988    vbc/greenMiddleSquareSpeed_reg[0]_i_25_n_0
+    SLICE_X82Y106        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.102 r  vbc/greenMiddleSquareSpeed_reg[0]_i_28/CO[3]
+                         net (fo=1, routed)           0.000     8.102    vbc/greenMiddleSquareSpeed_reg[0]_i_28_n_0
+    SLICE_X82Y107        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.216 r  vbc/greenMiddleSquareSpeed_reg[0]_i_16/CO[3]
+                         net (fo=1, routed)           0.000     8.216    vbc/greenMiddleSquareSpeed_reg[0]_i_16_n_0
+    SLICE_X82Y108        CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     8.550 r  vbc/greenMiddleSquareSpeed_reg[0]_i_27/O[1]
+                         net (fo=1, routed)           0.585     9.135    vbc/p_0_in[42]
+    SLICE_X87Y106        LUT4 (Prop_lut4_I1_O)        0.303     9.438 r  vbc/greenMiddleSquareSpeed[0]_i_20/O
+                         net (fo=1, routed)           0.407     9.845    vbc/greenMiddleSquareSpeed[0]_i_20_n_0
+    SLICE_X87Y106        LUT5 (Prop_lut5_I4_O)        0.124     9.969 r  vbc/greenMiddleSquareSpeed[0]_i_9/O
+                         net (fo=1, routed)           1.009    10.978    vbc/greenMiddleSquareSpeed[0]_i_9_n_0
+    SLICE_X83Y102        LUT6 (Prop_lut6_I4_O)        0.124    11.102 r  vbc/greenMiddleSquareSpeed[0]_i_3/O
+                         net (fo=61, routed)          0.773    11.875    vbc/greenMiddleSquareSpeed[0]_i_1_n_0
+    SLICE_X84Y97         LUT6 (Prop_lut6_I1_O)        0.124    11.999 r  vbc/greenMiddleSquareY[9]_i_1/O
+                         net (fo=10, routed)          0.614    12.613    vbc/greenMiddleSquareY
+    SLICE_X84Y96         FDRE                                         r  vbc/greenMiddleSquareY_reg[5]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)   10.000    10.000 r  
+    E3                                                0.000    10.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000    10.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           1.920    13.331    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          1.610    15.033    vbc/ClkPort_IBUF_BUFG
+    SLICE_X84Y96         FDRE                                         r  vbc/greenMiddleSquareY_reg[5]/C
+                         clock pessimism              0.259    15.292    
+                         clock uncertainty           -0.035    15.256    
+    SLICE_X84Y96         FDRE (Setup_fdre_C_R)       -0.524    14.732    vbc/greenMiddleSquareY_reg[5]
+  -------------------------------------------------------------------
+                         required time                         14.732    
+                         arrival time                         -12.613    
+  -------------------------------------------------------------------
+                         slack                                  2.120    
+
+Slack (MET) :             2.120ns  (required time - arrival time)
+  Source:                 vbc/greenMiddleSquareSpeed_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vbc/greenMiddleSquareY_reg[6]/R
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ClkPort
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ClkPort rise@10.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        7.285ns  (logic 3.209ns (44.050%)  route 4.076ns (55.950%))
+  Logic Levels:           15  (CARRY4=11 LUT4=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.036ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.033ns = ( 15.033 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.328ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          1.725     5.328    vbc/ClkPort_IBUF_BUFG
+    SLICE_X80Y98         FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X80Y98         FDRE (Prop_fdre_C_Q)         0.518     5.846 r  vbc/greenMiddleSquareSpeed_reg[1]/Q
+                         net (fo=2, routed)           0.687     6.533    vbc/greenMiddleSquareSpeed_reg[1]
+    SLICE_X82Y98         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.656     7.189 r  vbc/greenMiddleSquareSpeed_reg[0]_i_26/CO[3]
+                         net (fo=1, routed)           0.000     7.189    vbc/greenMiddleSquareSpeed_reg[0]_i_26_n_0
+    SLICE_X82Y99         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.303 r  vbc/greenMiddleSquareSpeed_reg[0]_i_14/CO[3]
+                         net (fo=1, routed)           0.001     7.304    vbc/greenMiddleSquareSpeed_reg[0]_i_14_n_0
+    SLICE_X82Y100        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.418 r  vbc/greenMiddleSquareSpeed_reg[0]_i_12/CO[3]
+                         net (fo=1, routed)           0.000     7.418    vbc/greenMiddleSquareSpeed_reg[0]_i_12_n_0
+    SLICE_X82Y101        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.532 r  vbc/greenMiddleSquareSpeed_reg[0]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     7.532    vbc/greenMiddleSquareSpeed_reg[0]_i_6_n_0
+    SLICE_X82Y102        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.646 r  vbc/greenMiddleSquareSpeed_reg[0]_i_11/CO[3]
+                         net (fo=1, routed)           0.000     7.646    vbc/greenMiddleSquareSpeed_reg[0]_i_11_n_0
+    SLICE_X82Y103        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.760 r  vbc/greenMiddleSquareSpeed_reg[0]_i_18/CO[3]
+                         net (fo=1, routed)           0.000     7.760    vbc/greenMiddleSquareSpeed_reg[0]_i_18_n_0
+    SLICE_X82Y104        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.874 r  vbc/greenMiddleSquareSpeed_reg[0]_i_19/CO[3]
+                         net (fo=1, routed)           0.000     7.874    vbc/greenMiddleSquareSpeed_reg[0]_i_19_n_0
+    SLICE_X82Y105        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.988 r  vbc/greenMiddleSquareSpeed_reg[0]_i_25/CO[3]
+                         net (fo=1, routed)           0.000     7.988    vbc/greenMiddleSquareSpeed_reg[0]_i_25_n_0
+    SLICE_X82Y106        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.102 r  vbc/greenMiddleSquareSpeed_reg[0]_i_28/CO[3]
+                         net (fo=1, routed)           0.000     8.102    vbc/greenMiddleSquareSpeed_reg[0]_i_28_n_0
+    SLICE_X82Y107        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.216 r  vbc/greenMiddleSquareSpeed_reg[0]_i_16/CO[3]
+                         net (fo=1, routed)           0.000     8.216    vbc/greenMiddleSquareSpeed_reg[0]_i_16_n_0
+    SLICE_X82Y108        CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     8.550 r  vbc/greenMiddleSquareSpeed_reg[0]_i_27/O[1]
+                         net (fo=1, routed)           0.585     9.135    vbc/p_0_in[42]
+    SLICE_X87Y106        LUT4 (Prop_lut4_I1_O)        0.303     9.438 r  vbc/greenMiddleSquareSpeed[0]_i_20/O
+                         net (fo=1, routed)           0.407     9.845    vbc/greenMiddleSquareSpeed[0]_i_20_n_0
+    SLICE_X87Y106        LUT5 (Prop_lut5_I4_O)        0.124     9.969 r  vbc/greenMiddleSquareSpeed[0]_i_9/O
+                         net (fo=1, routed)           1.009    10.978    vbc/greenMiddleSquareSpeed[0]_i_9_n_0
+    SLICE_X83Y102        LUT6 (Prop_lut6_I4_O)        0.124    11.102 r  vbc/greenMiddleSquareSpeed[0]_i_3/O
+                         net (fo=61, routed)          0.773    11.875    vbc/greenMiddleSquareSpeed[0]_i_1_n_0
+    SLICE_X84Y97         LUT6 (Prop_lut6_I1_O)        0.124    11.999 r  vbc/greenMiddleSquareY[9]_i_1/O
+                         net (fo=10, routed)          0.614    12.613    vbc/greenMiddleSquareY
+    SLICE_X84Y96         FDRE                                         r  vbc/greenMiddleSquareY_reg[6]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)   10.000    10.000 r  
+    E3                                                0.000    10.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000    10.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           1.920    13.331    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          1.610    15.033    vbc/ClkPort_IBUF_BUFG
+    SLICE_X84Y96         FDRE                                         r  vbc/greenMiddleSquareY_reg[6]/C
+                         clock pessimism              0.259    15.292    
+                         clock uncertainty           -0.035    15.256    
+    SLICE_X84Y96         FDRE (Setup_fdre_C_R)       -0.524    14.732    vbc/greenMiddleSquareY_reg[6]
+  -------------------------------------------------------------------
+                         required time                         14.732    
+                         arrival time                         -12.613    
+  -------------------------------------------------------------------
+                         slack                                  2.120    
+
+Slack (MET) :             2.120ns  (required time - arrival time)
+  Source:                 vbc/greenMiddleSquareSpeed_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vbc/greenMiddleSquareY_reg[7]/R
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ClkPort
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ClkPort rise@10.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        7.285ns  (logic 3.209ns (44.050%)  route 4.076ns (55.950%))
+  Logic Levels:           15  (CARRY4=11 LUT4=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.036ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.033ns = ( 15.033 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.328ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          1.725     5.328    vbc/ClkPort_IBUF_BUFG
+    SLICE_X80Y98         FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X80Y98         FDRE (Prop_fdre_C_Q)         0.518     5.846 r  vbc/greenMiddleSquareSpeed_reg[1]/Q
+                         net (fo=2, routed)           0.687     6.533    vbc/greenMiddleSquareSpeed_reg[1]
+    SLICE_X82Y98         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.656     7.189 r  vbc/greenMiddleSquareSpeed_reg[0]_i_26/CO[3]
+                         net (fo=1, routed)           0.000     7.189    vbc/greenMiddleSquareSpeed_reg[0]_i_26_n_0
+    SLICE_X82Y99         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.303 r  vbc/greenMiddleSquareSpeed_reg[0]_i_14/CO[3]
+                         net (fo=1, routed)           0.001     7.304    vbc/greenMiddleSquareSpeed_reg[0]_i_14_n_0
+    SLICE_X82Y100        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.418 r  vbc/greenMiddleSquareSpeed_reg[0]_i_12/CO[3]
+                         net (fo=1, routed)           0.000     7.418    vbc/greenMiddleSquareSpeed_reg[0]_i_12_n_0
+    SLICE_X82Y101        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.532 r  vbc/greenMiddleSquareSpeed_reg[0]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     7.532    vbc/greenMiddleSquareSpeed_reg[0]_i_6_n_0
+    SLICE_X82Y102        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.646 r  vbc/greenMiddleSquareSpeed_reg[0]_i_11/CO[3]
+                         net (fo=1, routed)           0.000     7.646    vbc/greenMiddleSquareSpeed_reg[0]_i_11_n_0
+    SLICE_X82Y103        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.760 r  vbc/greenMiddleSquareSpeed_reg[0]_i_18/CO[3]
+                         net (fo=1, routed)           0.000     7.760    vbc/greenMiddleSquareSpeed_reg[0]_i_18_n_0
+    SLICE_X82Y104        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.874 r  vbc/greenMiddleSquareSpeed_reg[0]_i_19/CO[3]
+                         net (fo=1, routed)           0.000     7.874    vbc/greenMiddleSquareSpeed_reg[0]_i_19_n_0
+    SLICE_X82Y105        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.988 r  vbc/greenMiddleSquareSpeed_reg[0]_i_25/CO[3]
+                         net (fo=1, routed)           0.000     7.988    vbc/greenMiddleSquareSpeed_reg[0]_i_25_n_0
+    SLICE_X82Y106        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.102 r  vbc/greenMiddleSquareSpeed_reg[0]_i_28/CO[3]
+                         net (fo=1, routed)           0.000     8.102    vbc/greenMiddleSquareSpeed_reg[0]_i_28_n_0
+    SLICE_X82Y107        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.216 r  vbc/greenMiddleSquareSpeed_reg[0]_i_16/CO[3]
+                         net (fo=1, routed)           0.000     8.216    vbc/greenMiddleSquareSpeed_reg[0]_i_16_n_0
+    SLICE_X82Y108        CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     8.550 r  vbc/greenMiddleSquareSpeed_reg[0]_i_27/O[1]
+                         net (fo=1, routed)           0.585     9.135    vbc/p_0_in[42]
+    SLICE_X87Y106        LUT4 (Prop_lut4_I1_O)        0.303     9.438 r  vbc/greenMiddleSquareSpeed[0]_i_20/O
+                         net (fo=1, routed)           0.407     9.845    vbc/greenMiddleSquareSpeed[0]_i_20_n_0
+    SLICE_X87Y106        LUT5 (Prop_lut5_I4_O)        0.124     9.969 r  vbc/greenMiddleSquareSpeed[0]_i_9/O
+                         net (fo=1, routed)           1.009    10.978    vbc/greenMiddleSquareSpeed[0]_i_9_n_0
+    SLICE_X83Y102        LUT6 (Prop_lut6_I4_O)        0.124    11.102 r  vbc/greenMiddleSquareSpeed[0]_i_3/O
+                         net (fo=61, routed)          0.773    11.875    vbc/greenMiddleSquareSpeed[0]_i_1_n_0
+    SLICE_X84Y97         LUT6 (Prop_lut6_I1_O)        0.124    11.999 r  vbc/greenMiddleSquareY[9]_i_1/O
+                         net (fo=10, routed)          0.614    12.613    vbc/greenMiddleSquareY
+    SLICE_X84Y96         FDRE                                         r  vbc/greenMiddleSquareY_reg[7]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)   10.000    10.000 r  
+    E3                                                0.000    10.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000    10.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           1.920    13.331    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          1.610    15.033    vbc/ClkPort_IBUF_BUFG
+    SLICE_X84Y96         FDRE                                         r  vbc/greenMiddleSquareY_reg[7]/C
+                         clock pessimism              0.259    15.292    
+                         clock uncertainty           -0.035    15.256    
+    SLICE_X84Y96         FDRE (Setup_fdre_C_R)       -0.524    14.732    vbc/greenMiddleSquareY_reg[7]
+  -------------------------------------------------------------------
+                         required time                         14.732    
+                         arrival time                         -12.613    
+  -------------------------------------------------------------------
+                         slack                                  2.120    
+
+Slack (MET) :             2.125ns  (required time - arrival time)
+  Source:                 vbc/greenMiddleSquareSpeed_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vbc/greenMiddleSquareY_reg[0]/R
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ClkPort
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ClkPort rise@10.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        7.374ns  (logic 3.209ns (43.516%)  route 4.165ns (56.484%))
+  Logic Levels:           15  (CARRY4=11 LUT4=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.036ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.033ns = ( 15.033 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.328ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          1.725     5.328    vbc/ClkPort_IBUF_BUFG
+    SLICE_X80Y98         FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X80Y98         FDRE (Prop_fdre_C_Q)         0.518     5.846 r  vbc/greenMiddleSquareSpeed_reg[1]/Q
+                         net (fo=2, routed)           0.687     6.533    vbc/greenMiddleSquareSpeed_reg[1]
+    SLICE_X82Y98         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.656     7.189 r  vbc/greenMiddleSquareSpeed_reg[0]_i_26/CO[3]
+                         net (fo=1, routed)           0.000     7.189    vbc/greenMiddleSquareSpeed_reg[0]_i_26_n_0
+    SLICE_X82Y99         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.303 r  vbc/greenMiddleSquareSpeed_reg[0]_i_14/CO[3]
+                         net (fo=1, routed)           0.001     7.304    vbc/greenMiddleSquareSpeed_reg[0]_i_14_n_0
+    SLICE_X82Y100        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.418 r  vbc/greenMiddleSquareSpeed_reg[0]_i_12/CO[3]
+                         net (fo=1, routed)           0.000     7.418    vbc/greenMiddleSquareSpeed_reg[0]_i_12_n_0
+    SLICE_X82Y101        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.532 r  vbc/greenMiddleSquareSpeed_reg[0]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     7.532    vbc/greenMiddleSquareSpeed_reg[0]_i_6_n_0
+    SLICE_X82Y102        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.646 r  vbc/greenMiddleSquareSpeed_reg[0]_i_11/CO[3]
+                         net (fo=1, routed)           0.000     7.646    vbc/greenMiddleSquareSpeed_reg[0]_i_11_n_0
+    SLICE_X82Y103        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.760 r  vbc/greenMiddleSquareSpeed_reg[0]_i_18/CO[3]
+                         net (fo=1, routed)           0.000     7.760    vbc/greenMiddleSquareSpeed_reg[0]_i_18_n_0
+    SLICE_X82Y104        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.874 r  vbc/greenMiddleSquareSpeed_reg[0]_i_19/CO[3]
+                         net (fo=1, routed)           0.000     7.874    vbc/greenMiddleSquareSpeed_reg[0]_i_19_n_0
+    SLICE_X82Y105        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.988 r  vbc/greenMiddleSquareSpeed_reg[0]_i_25/CO[3]
+                         net (fo=1, routed)           0.000     7.988    vbc/greenMiddleSquareSpeed_reg[0]_i_25_n_0
+    SLICE_X82Y106        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.102 r  vbc/greenMiddleSquareSpeed_reg[0]_i_28/CO[3]
+                         net (fo=1, routed)           0.000     8.102    vbc/greenMiddleSquareSpeed_reg[0]_i_28_n_0
+    SLICE_X82Y107        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.216 r  vbc/greenMiddleSquareSpeed_reg[0]_i_16/CO[3]
+                         net (fo=1, routed)           0.000     8.216    vbc/greenMiddleSquareSpeed_reg[0]_i_16_n_0
+    SLICE_X82Y108        CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     8.550 r  vbc/greenMiddleSquareSpeed_reg[0]_i_27/O[1]
+                         net (fo=1, routed)           0.585     9.135    vbc/p_0_in[42]
+    SLICE_X87Y106        LUT4 (Prop_lut4_I1_O)        0.303     9.438 r  vbc/greenMiddleSquareSpeed[0]_i_20/O
+                         net (fo=1, routed)           0.407     9.845    vbc/greenMiddleSquareSpeed[0]_i_20_n_0
+    SLICE_X87Y106        LUT5 (Prop_lut5_I4_O)        0.124     9.969 r  vbc/greenMiddleSquareSpeed[0]_i_9/O
+                         net (fo=1, routed)           1.009    10.978    vbc/greenMiddleSquareSpeed[0]_i_9_n_0
+    SLICE_X83Y102        LUT6 (Prop_lut6_I4_O)        0.124    11.102 r  vbc/greenMiddleSquareSpeed[0]_i_3/O
+                         net (fo=61, routed)          0.773    11.875    vbc/greenMiddleSquareSpeed[0]_i_1_n_0
+    SLICE_X84Y97         LUT6 (Prop_lut6_I1_O)        0.124    11.999 r  vbc/greenMiddleSquareY[9]_i_1/O
+                         net (fo=10, routed)          0.703    12.702    vbc/greenMiddleSquareY
+    SLICE_X83Y96         FDRE                                         r  vbc/greenMiddleSquareY_reg[0]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)   10.000    10.000 r  
+    E3                                                0.000    10.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000    10.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           1.920    13.331    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          1.610    15.033    vbc/ClkPort_IBUF_BUFG
+    SLICE_X83Y96         FDRE                                         r  vbc/greenMiddleSquareY_reg[0]/C
+                         clock pessimism              0.259    15.292    
+                         clock uncertainty           -0.035    15.256    
+    SLICE_X83Y96         FDRE (Setup_fdre_C_R)       -0.429    14.827    vbc/greenMiddleSquareY_reg[0]
+  -------------------------------------------------------------------
+                         required time                         14.827    
+                         arrival time                         -12.702    
+  -------------------------------------------------------------------
+                         slack                                  2.125    
+
+Slack (MET) :             2.125ns  (required time - arrival time)
+  Source:                 vbc/greenMiddleSquareSpeed_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vbc/greenMiddleSquareY_reg[1]/R
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ClkPort
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ClkPort rise@10.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        7.374ns  (logic 3.209ns (43.516%)  route 4.165ns (56.484%))
+  Logic Levels:           15  (CARRY4=11 LUT4=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.036ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.033ns = ( 15.033 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.328ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          1.725     5.328    vbc/ClkPort_IBUF_BUFG
+    SLICE_X80Y98         FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X80Y98         FDRE (Prop_fdre_C_Q)         0.518     5.846 r  vbc/greenMiddleSquareSpeed_reg[1]/Q
+                         net (fo=2, routed)           0.687     6.533    vbc/greenMiddleSquareSpeed_reg[1]
+    SLICE_X82Y98         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.656     7.189 r  vbc/greenMiddleSquareSpeed_reg[0]_i_26/CO[3]
+                         net (fo=1, routed)           0.000     7.189    vbc/greenMiddleSquareSpeed_reg[0]_i_26_n_0
+    SLICE_X82Y99         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.303 r  vbc/greenMiddleSquareSpeed_reg[0]_i_14/CO[3]
+                         net (fo=1, routed)           0.001     7.304    vbc/greenMiddleSquareSpeed_reg[0]_i_14_n_0
+    SLICE_X82Y100        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.418 r  vbc/greenMiddleSquareSpeed_reg[0]_i_12/CO[3]
+                         net (fo=1, routed)           0.000     7.418    vbc/greenMiddleSquareSpeed_reg[0]_i_12_n_0
+    SLICE_X82Y101        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.532 r  vbc/greenMiddleSquareSpeed_reg[0]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     7.532    vbc/greenMiddleSquareSpeed_reg[0]_i_6_n_0
+    SLICE_X82Y102        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.646 r  vbc/greenMiddleSquareSpeed_reg[0]_i_11/CO[3]
+                         net (fo=1, routed)           0.000     7.646    vbc/greenMiddleSquareSpeed_reg[0]_i_11_n_0
+    SLICE_X82Y103        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.760 r  vbc/greenMiddleSquareSpeed_reg[0]_i_18/CO[3]
+                         net (fo=1, routed)           0.000     7.760    vbc/greenMiddleSquareSpeed_reg[0]_i_18_n_0
+    SLICE_X82Y104        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.874 r  vbc/greenMiddleSquareSpeed_reg[0]_i_19/CO[3]
+                         net (fo=1, routed)           0.000     7.874    vbc/greenMiddleSquareSpeed_reg[0]_i_19_n_0
+    SLICE_X82Y105        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.988 r  vbc/greenMiddleSquareSpeed_reg[0]_i_25/CO[3]
+                         net (fo=1, routed)           0.000     7.988    vbc/greenMiddleSquareSpeed_reg[0]_i_25_n_0
+    SLICE_X82Y106        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.102 r  vbc/greenMiddleSquareSpeed_reg[0]_i_28/CO[3]
+                         net (fo=1, routed)           0.000     8.102    vbc/greenMiddleSquareSpeed_reg[0]_i_28_n_0
+    SLICE_X82Y107        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.216 r  vbc/greenMiddleSquareSpeed_reg[0]_i_16/CO[3]
+                         net (fo=1, routed)           0.000     8.216    vbc/greenMiddleSquareSpeed_reg[0]_i_16_n_0
+    SLICE_X82Y108        CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     8.550 r  vbc/greenMiddleSquareSpeed_reg[0]_i_27/O[1]
+                         net (fo=1, routed)           0.585     9.135    vbc/p_0_in[42]
+    SLICE_X87Y106        LUT4 (Prop_lut4_I1_O)        0.303     9.438 r  vbc/greenMiddleSquareSpeed[0]_i_20/O
+                         net (fo=1, routed)           0.407     9.845    vbc/greenMiddleSquareSpeed[0]_i_20_n_0
+    SLICE_X87Y106        LUT5 (Prop_lut5_I4_O)        0.124     9.969 r  vbc/greenMiddleSquareSpeed[0]_i_9/O
+                         net (fo=1, routed)           1.009    10.978    vbc/greenMiddleSquareSpeed[0]_i_9_n_0
+    SLICE_X83Y102        LUT6 (Prop_lut6_I4_O)        0.124    11.102 r  vbc/greenMiddleSquareSpeed[0]_i_3/O
+                         net (fo=61, routed)          0.773    11.875    vbc/greenMiddleSquareSpeed[0]_i_1_n_0
+    SLICE_X84Y97         LUT6 (Prop_lut6_I1_O)        0.124    11.999 r  vbc/greenMiddleSquareY[9]_i_1/O
+                         net (fo=10, routed)          0.703    12.702    vbc/greenMiddleSquareY
+    SLICE_X83Y96         FDRE                                         r  vbc/greenMiddleSquareY_reg[1]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)   10.000    10.000 r  
+    E3                                                0.000    10.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000    10.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           1.920    13.331    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          1.610    15.033    vbc/ClkPort_IBUF_BUFG
+    SLICE_X83Y96         FDRE                                         r  vbc/greenMiddleSquareY_reg[1]/C
+                         clock pessimism              0.259    15.292    
+                         clock uncertainty           -0.035    15.256    
+    SLICE_X83Y96         FDRE (Setup_fdre_C_R)       -0.429    14.827    vbc/greenMiddleSquareY_reg[1]
+  -------------------------------------------------------------------
+                         required time                         14.827    
+                         arrival time                         -12.702    
+  -------------------------------------------------------------------
+                         slack                                  2.125    
+
+Slack (MET) :             2.125ns  (required time - arrival time)
+  Source:                 vbc/greenMiddleSquareSpeed_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vbc/greenMiddleSquareY_reg[4]/R
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ClkPort
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ClkPort rise@10.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        7.374ns  (logic 3.209ns (43.516%)  route 4.165ns (56.484%))
+  Logic Levels:           15  (CARRY4=11 LUT4=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.036ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.033ns = ( 15.033 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.328ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          1.725     5.328    vbc/ClkPort_IBUF_BUFG
+    SLICE_X80Y98         FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X80Y98         FDRE (Prop_fdre_C_Q)         0.518     5.846 r  vbc/greenMiddleSquareSpeed_reg[1]/Q
+                         net (fo=2, routed)           0.687     6.533    vbc/greenMiddleSquareSpeed_reg[1]
+    SLICE_X82Y98         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.656     7.189 r  vbc/greenMiddleSquareSpeed_reg[0]_i_26/CO[3]
+                         net (fo=1, routed)           0.000     7.189    vbc/greenMiddleSquareSpeed_reg[0]_i_26_n_0
+    SLICE_X82Y99         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.303 r  vbc/greenMiddleSquareSpeed_reg[0]_i_14/CO[3]
+                         net (fo=1, routed)           0.001     7.304    vbc/greenMiddleSquareSpeed_reg[0]_i_14_n_0
+    SLICE_X82Y100        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.418 r  vbc/greenMiddleSquareSpeed_reg[0]_i_12/CO[3]
+                         net (fo=1, routed)           0.000     7.418    vbc/greenMiddleSquareSpeed_reg[0]_i_12_n_0
+    SLICE_X82Y101        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.532 r  vbc/greenMiddleSquareSpeed_reg[0]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     7.532    vbc/greenMiddleSquareSpeed_reg[0]_i_6_n_0
+    SLICE_X82Y102        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.646 r  vbc/greenMiddleSquareSpeed_reg[0]_i_11/CO[3]
+                         net (fo=1, routed)           0.000     7.646    vbc/greenMiddleSquareSpeed_reg[0]_i_11_n_0
+    SLICE_X82Y103        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.760 r  vbc/greenMiddleSquareSpeed_reg[0]_i_18/CO[3]
+                         net (fo=1, routed)           0.000     7.760    vbc/greenMiddleSquareSpeed_reg[0]_i_18_n_0
+    SLICE_X82Y104        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.874 r  vbc/greenMiddleSquareSpeed_reg[0]_i_19/CO[3]
+                         net (fo=1, routed)           0.000     7.874    vbc/greenMiddleSquareSpeed_reg[0]_i_19_n_0
+    SLICE_X82Y105        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.988 r  vbc/greenMiddleSquareSpeed_reg[0]_i_25/CO[3]
+                         net (fo=1, routed)           0.000     7.988    vbc/greenMiddleSquareSpeed_reg[0]_i_25_n_0
+    SLICE_X82Y106        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.102 r  vbc/greenMiddleSquareSpeed_reg[0]_i_28/CO[3]
+                         net (fo=1, routed)           0.000     8.102    vbc/greenMiddleSquareSpeed_reg[0]_i_28_n_0
+    SLICE_X82Y107        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.216 r  vbc/greenMiddleSquareSpeed_reg[0]_i_16/CO[3]
+                         net (fo=1, routed)           0.000     8.216    vbc/greenMiddleSquareSpeed_reg[0]_i_16_n_0
+    SLICE_X82Y108        CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     8.550 r  vbc/greenMiddleSquareSpeed_reg[0]_i_27/O[1]
+                         net (fo=1, routed)           0.585     9.135    vbc/p_0_in[42]
+    SLICE_X87Y106        LUT4 (Prop_lut4_I1_O)        0.303     9.438 r  vbc/greenMiddleSquareSpeed[0]_i_20/O
+                         net (fo=1, routed)           0.407     9.845    vbc/greenMiddleSquareSpeed[0]_i_20_n_0
+    SLICE_X87Y106        LUT5 (Prop_lut5_I4_O)        0.124     9.969 r  vbc/greenMiddleSquareSpeed[0]_i_9/O
+                         net (fo=1, routed)           1.009    10.978    vbc/greenMiddleSquareSpeed[0]_i_9_n_0
+    SLICE_X83Y102        LUT6 (Prop_lut6_I4_O)        0.124    11.102 r  vbc/greenMiddleSquareSpeed[0]_i_3/O
+                         net (fo=61, routed)          0.773    11.875    vbc/greenMiddleSquareSpeed[0]_i_1_n_0
+    SLICE_X84Y97         LUT6 (Prop_lut6_I1_O)        0.124    11.999 r  vbc/greenMiddleSquareY[9]_i_1/O
+                         net (fo=10, routed)          0.703    12.702    vbc/greenMiddleSquareY
+    SLICE_X83Y96         FDRE                                         r  vbc/greenMiddleSquareY_reg[4]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)   10.000    10.000 r  
+    E3                                                0.000    10.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000    10.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           1.920    13.331    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          1.610    15.033    vbc/ClkPort_IBUF_BUFG
+    SLICE_X83Y96         FDRE                                         r  vbc/greenMiddleSquareY_reg[4]/C
+                         clock pessimism              0.259    15.292    
+                         clock uncertainty           -0.035    15.256    
+    SLICE_X83Y96         FDRE (Setup_fdre_C_R)       -0.429    14.827    vbc/greenMiddleSquareY_reg[4]
+  -------------------------------------------------------------------
+                         required time                         14.827    
+                         arrival time                         -12.702    
+  -------------------------------------------------------------------
+                         slack                                  2.125    
+
+Slack (MET) :             2.215ns  (required time - arrival time)
+  Source:                 vbc/greenMiddleSquareSpeed_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vbc/greenMiddleSquareY_reg[3]/R
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ClkPort
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ClkPort rise@10.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        7.285ns  (logic 3.209ns (44.050%)  route 4.076ns (55.950%))
+  Logic Levels:           15  (CARRY4=11 LUT4=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.036ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.033ns = ( 15.033 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.328ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          1.725     5.328    vbc/ClkPort_IBUF_BUFG
+    SLICE_X80Y98         FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X80Y98         FDRE (Prop_fdre_C_Q)         0.518     5.846 r  vbc/greenMiddleSquareSpeed_reg[1]/Q
+                         net (fo=2, routed)           0.687     6.533    vbc/greenMiddleSquareSpeed_reg[1]
+    SLICE_X82Y98         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.656     7.189 r  vbc/greenMiddleSquareSpeed_reg[0]_i_26/CO[3]
+                         net (fo=1, routed)           0.000     7.189    vbc/greenMiddleSquareSpeed_reg[0]_i_26_n_0
+    SLICE_X82Y99         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.303 r  vbc/greenMiddleSquareSpeed_reg[0]_i_14/CO[3]
+                         net (fo=1, routed)           0.001     7.304    vbc/greenMiddleSquareSpeed_reg[0]_i_14_n_0
+    SLICE_X82Y100        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.418 r  vbc/greenMiddleSquareSpeed_reg[0]_i_12/CO[3]
+                         net (fo=1, routed)           0.000     7.418    vbc/greenMiddleSquareSpeed_reg[0]_i_12_n_0
+    SLICE_X82Y101        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.532 r  vbc/greenMiddleSquareSpeed_reg[0]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     7.532    vbc/greenMiddleSquareSpeed_reg[0]_i_6_n_0
+    SLICE_X82Y102        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.646 r  vbc/greenMiddleSquareSpeed_reg[0]_i_11/CO[3]
+                         net (fo=1, routed)           0.000     7.646    vbc/greenMiddleSquareSpeed_reg[0]_i_11_n_0
+    SLICE_X82Y103        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.760 r  vbc/greenMiddleSquareSpeed_reg[0]_i_18/CO[3]
+                         net (fo=1, routed)           0.000     7.760    vbc/greenMiddleSquareSpeed_reg[0]_i_18_n_0
+    SLICE_X82Y104        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.874 r  vbc/greenMiddleSquareSpeed_reg[0]_i_19/CO[3]
+                         net (fo=1, routed)           0.000     7.874    vbc/greenMiddleSquareSpeed_reg[0]_i_19_n_0
+    SLICE_X82Y105        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.988 r  vbc/greenMiddleSquareSpeed_reg[0]_i_25/CO[3]
+                         net (fo=1, routed)           0.000     7.988    vbc/greenMiddleSquareSpeed_reg[0]_i_25_n_0
+    SLICE_X82Y106        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.102 r  vbc/greenMiddleSquareSpeed_reg[0]_i_28/CO[3]
+                         net (fo=1, routed)           0.000     8.102    vbc/greenMiddleSquareSpeed_reg[0]_i_28_n_0
+    SLICE_X82Y107        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.216 r  vbc/greenMiddleSquareSpeed_reg[0]_i_16/CO[3]
+                         net (fo=1, routed)           0.000     8.216    vbc/greenMiddleSquareSpeed_reg[0]_i_16_n_0
+    SLICE_X82Y108        CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     8.550 r  vbc/greenMiddleSquareSpeed_reg[0]_i_27/O[1]
+                         net (fo=1, routed)           0.585     9.135    vbc/p_0_in[42]
+    SLICE_X87Y106        LUT4 (Prop_lut4_I1_O)        0.303     9.438 r  vbc/greenMiddleSquareSpeed[0]_i_20/O
+                         net (fo=1, routed)           0.407     9.845    vbc/greenMiddleSquareSpeed[0]_i_20_n_0
+    SLICE_X87Y106        LUT5 (Prop_lut5_I4_O)        0.124     9.969 r  vbc/greenMiddleSquareSpeed[0]_i_9/O
+                         net (fo=1, routed)           1.009    10.978    vbc/greenMiddleSquareSpeed[0]_i_9_n_0
+    SLICE_X83Y102        LUT6 (Prop_lut6_I4_O)        0.124    11.102 r  vbc/greenMiddleSquareSpeed[0]_i_3/O
+                         net (fo=61, routed)          0.773    11.875    vbc/greenMiddleSquareSpeed[0]_i_1_n_0
+    SLICE_X84Y97         LUT6 (Prop_lut6_I1_O)        0.124    11.999 r  vbc/greenMiddleSquareY[9]_i_1/O
+                         net (fo=10, routed)          0.614    12.613    vbc/greenMiddleSquareY
+    SLICE_X85Y96         FDRE                                         r  vbc/greenMiddleSquareY_reg[3]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)   10.000    10.000 r  
+    E3                                                0.000    10.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000    10.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           1.920    13.331    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          1.610    15.033    vbc/ClkPort_IBUF_BUFG
+    SLICE_X85Y96         FDRE                                         r  vbc/greenMiddleSquareY_reg[3]/C
+                         clock pessimism              0.259    15.292    
+                         clock uncertainty           -0.035    15.256    
+    SLICE_X85Y96         FDRE (Setup_fdre_C_R)       -0.429    14.827    vbc/greenMiddleSquareY_reg[3]
+  -------------------------------------------------------------------
+                         required time                         14.827    
+                         arrival time                         -12.613    
+  -------------------------------------------------------------------
+                         slack                                  2.215    
+
+Slack (MET) :             2.215ns  (required time - arrival time)
+  Source:                 vbc/greenMiddleSquareSpeed_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vbc/greenMiddleSquareY_reg[8]/R
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ClkPort
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ClkPort rise@10.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        7.285ns  (logic 3.209ns (44.050%)  route 4.076ns (55.950%))
+  Logic Levels:           15  (CARRY4=11 LUT4=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.036ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.033ns = ( 15.033 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.328ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          1.725     5.328    vbc/ClkPort_IBUF_BUFG
+    SLICE_X80Y98         FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X80Y98         FDRE (Prop_fdre_C_Q)         0.518     5.846 r  vbc/greenMiddleSquareSpeed_reg[1]/Q
+                         net (fo=2, routed)           0.687     6.533    vbc/greenMiddleSquareSpeed_reg[1]
+    SLICE_X82Y98         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.656     7.189 r  vbc/greenMiddleSquareSpeed_reg[0]_i_26/CO[3]
+                         net (fo=1, routed)           0.000     7.189    vbc/greenMiddleSquareSpeed_reg[0]_i_26_n_0
+    SLICE_X82Y99         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.303 r  vbc/greenMiddleSquareSpeed_reg[0]_i_14/CO[3]
+                         net (fo=1, routed)           0.001     7.304    vbc/greenMiddleSquareSpeed_reg[0]_i_14_n_0
+    SLICE_X82Y100        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.418 r  vbc/greenMiddleSquareSpeed_reg[0]_i_12/CO[3]
+                         net (fo=1, routed)           0.000     7.418    vbc/greenMiddleSquareSpeed_reg[0]_i_12_n_0
+    SLICE_X82Y101        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.532 r  vbc/greenMiddleSquareSpeed_reg[0]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     7.532    vbc/greenMiddleSquareSpeed_reg[0]_i_6_n_0
+    SLICE_X82Y102        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.646 r  vbc/greenMiddleSquareSpeed_reg[0]_i_11/CO[3]
+                         net (fo=1, routed)           0.000     7.646    vbc/greenMiddleSquareSpeed_reg[0]_i_11_n_0
+    SLICE_X82Y103        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.760 r  vbc/greenMiddleSquareSpeed_reg[0]_i_18/CO[3]
+                         net (fo=1, routed)           0.000     7.760    vbc/greenMiddleSquareSpeed_reg[0]_i_18_n_0
+    SLICE_X82Y104        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.874 r  vbc/greenMiddleSquareSpeed_reg[0]_i_19/CO[3]
+                         net (fo=1, routed)           0.000     7.874    vbc/greenMiddleSquareSpeed_reg[0]_i_19_n_0
+    SLICE_X82Y105        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.988 r  vbc/greenMiddleSquareSpeed_reg[0]_i_25/CO[3]
+                         net (fo=1, routed)           0.000     7.988    vbc/greenMiddleSquareSpeed_reg[0]_i_25_n_0
+    SLICE_X82Y106        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.102 r  vbc/greenMiddleSquareSpeed_reg[0]_i_28/CO[3]
+                         net (fo=1, routed)           0.000     8.102    vbc/greenMiddleSquareSpeed_reg[0]_i_28_n_0
+    SLICE_X82Y107        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.216 r  vbc/greenMiddleSquareSpeed_reg[0]_i_16/CO[3]
+                         net (fo=1, routed)           0.000     8.216    vbc/greenMiddleSquareSpeed_reg[0]_i_16_n_0
+    SLICE_X82Y108        CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     8.550 r  vbc/greenMiddleSquareSpeed_reg[0]_i_27/O[1]
+                         net (fo=1, routed)           0.585     9.135    vbc/p_0_in[42]
+    SLICE_X87Y106        LUT4 (Prop_lut4_I1_O)        0.303     9.438 r  vbc/greenMiddleSquareSpeed[0]_i_20/O
+                         net (fo=1, routed)           0.407     9.845    vbc/greenMiddleSquareSpeed[0]_i_20_n_0
+    SLICE_X87Y106        LUT5 (Prop_lut5_I4_O)        0.124     9.969 r  vbc/greenMiddleSquareSpeed[0]_i_9/O
+                         net (fo=1, routed)           1.009    10.978    vbc/greenMiddleSquareSpeed[0]_i_9_n_0
+    SLICE_X83Y102        LUT6 (Prop_lut6_I4_O)        0.124    11.102 r  vbc/greenMiddleSquareSpeed[0]_i_3/O
+                         net (fo=61, routed)          0.773    11.875    vbc/greenMiddleSquareSpeed[0]_i_1_n_0
+    SLICE_X84Y97         LUT6 (Prop_lut6_I1_O)        0.124    11.999 r  vbc/greenMiddleSquareY[9]_i_1/O
+                         net (fo=10, routed)          0.614    12.613    vbc/greenMiddleSquareY
+    SLICE_X85Y96         FDRE                                         r  vbc/greenMiddleSquareY_reg[8]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)   10.000    10.000 r  
+    E3                                                0.000    10.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000    10.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           1.920    13.331    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          1.610    15.033    vbc/ClkPort_IBUF_BUFG
+    SLICE_X85Y96         FDRE                                         r  vbc/greenMiddleSquareY_reg[8]/C
+                         clock pessimism              0.259    15.292    
+                         clock uncertainty           -0.035    15.256    
+    SLICE_X85Y96         FDRE (Setup_fdre_C_R)       -0.429    14.827    vbc/greenMiddleSquareY_reg[8]
+  -------------------------------------------------------------------
+                         required time                         14.827    
+                         arrival time                         -12.613    
+  -------------------------------------------------------------------
+                         slack                                  2.215    
+
+Slack (MET) :             2.215ns  (required time - arrival time)
+  Source:                 vbc/greenMiddleSquareSpeed_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vbc/greenMiddleSquareY_reg[9]/R
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ClkPort
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ClkPort rise@10.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        7.285ns  (logic 3.209ns (44.050%)  route 4.076ns (55.950%))
+  Logic Levels:           15  (CARRY4=11 LUT4=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.036ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.033ns = ( 15.033 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.328ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          1.725     5.328    vbc/ClkPort_IBUF_BUFG
+    SLICE_X80Y98         FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X80Y98         FDRE (Prop_fdre_C_Q)         0.518     5.846 r  vbc/greenMiddleSquareSpeed_reg[1]/Q
+                         net (fo=2, routed)           0.687     6.533    vbc/greenMiddleSquareSpeed_reg[1]
+    SLICE_X82Y98         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.656     7.189 r  vbc/greenMiddleSquareSpeed_reg[0]_i_26/CO[3]
+                         net (fo=1, routed)           0.000     7.189    vbc/greenMiddleSquareSpeed_reg[0]_i_26_n_0
+    SLICE_X82Y99         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.303 r  vbc/greenMiddleSquareSpeed_reg[0]_i_14/CO[3]
+                         net (fo=1, routed)           0.001     7.304    vbc/greenMiddleSquareSpeed_reg[0]_i_14_n_0
+    SLICE_X82Y100        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.418 r  vbc/greenMiddleSquareSpeed_reg[0]_i_12/CO[3]
+                         net (fo=1, routed)           0.000     7.418    vbc/greenMiddleSquareSpeed_reg[0]_i_12_n_0
+    SLICE_X82Y101        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.532 r  vbc/greenMiddleSquareSpeed_reg[0]_i_6/CO[3]
+                         net (fo=1, routed)           0.000     7.532    vbc/greenMiddleSquareSpeed_reg[0]_i_6_n_0
+    SLICE_X82Y102        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.646 r  vbc/greenMiddleSquareSpeed_reg[0]_i_11/CO[3]
+                         net (fo=1, routed)           0.000     7.646    vbc/greenMiddleSquareSpeed_reg[0]_i_11_n_0
+    SLICE_X82Y103        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.760 r  vbc/greenMiddleSquareSpeed_reg[0]_i_18/CO[3]
+                         net (fo=1, routed)           0.000     7.760    vbc/greenMiddleSquareSpeed_reg[0]_i_18_n_0
+    SLICE_X82Y104        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.874 r  vbc/greenMiddleSquareSpeed_reg[0]_i_19/CO[3]
+                         net (fo=1, routed)           0.000     7.874    vbc/greenMiddleSquareSpeed_reg[0]_i_19_n_0
+    SLICE_X82Y105        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.988 r  vbc/greenMiddleSquareSpeed_reg[0]_i_25/CO[3]
+                         net (fo=1, routed)           0.000     7.988    vbc/greenMiddleSquareSpeed_reg[0]_i_25_n_0
+    SLICE_X82Y106        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.102 r  vbc/greenMiddleSquareSpeed_reg[0]_i_28/CO[3]
+                         net (fo=1, routed)           0.000     8.102    vbc/greenMiddleSquareSpeed_reg[0]_i_28_n_0
+    SLICE_X82Y107        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     8.216 r  vbc/greenMiddleSquareSpeed_reg[0]_i_16/CO[3]
+                         net (fo=1, routed)           0.000     8.216    vbc/greenMiddleSquareSpeed_reg[0]_i_16_n_0
+    SLICE_X82Y108        CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     8.550 r  vbc/greenMiddleSquareSpeed_reg[0]_i_27/O[1]
+                         net (fo=1, routed)           0.585     9.135    vbc/p_0_in[42]
+    SLICE_X87Y106        LUT4 (Prop_lut4_I1_O)        0.303     9.438 r  vbc/greenMiddleSquareSpeed[0]_i_20/O
+                         net (fo=1, routed)           0.407     9.845    vbc/greenMiddleSquareSpeed[0]_i_20_n_0
+    SLICE_X87Y106        LUT5 (Prop_lut5_I4_O)        0.124     9.969 r  vbc/greenMiddleSquareSpeed[0]_i_9/O
+                         net (fo=1, routed)           1.009    10.978    vbc/greenMiddleSquareSpeed[0]_i_9_n_0
+    SLICE_X83Y102        LUT6 (Prop_lut6_I4_O)        0.124    11.102 r  vbc/greenMiddleSquareSpeed[0]_i_3/O
+                         net (fo=61, routed)          0.773    11.875    vbc/greenMiddleSquareSpeed[0]_i_1_n_0
+    SLICE_X84Y97         LUT6 (Prop_lut6_I1_O)        0.124    11.999 r  vbc/greenMiddleSquareY[9]_i_1/O
+                         net (fo=10, routed)          0.614    12.613    vbc/greenMiddleSquareY
+    SLICE_X85Y96         FDRE                                         r  vbc/greenMiddleSquareY_reg[9]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)   10.000    10.000 r  
+    E3                                                0.000    10.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000    10.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           1.920    13.331    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          1.610    15.033    vbc/ClkPort_IBUF_BUFG
+    SLICE_X85Y96         FDRE                                         r  vbc/greenMiddleSquareY_reg[9]/C
+                         clock pessimism              0.259    15.292    
+                         clock uncertainty           -0.035    15.256    
+    SLICE_X85Y96         FDRE (Setup_fdre_C_R)       -0.429    14.827    vbc/greenMiddleSquareY_reg[9]
+  -------------------------------------------------------------------
+                         required time                         14.827    
+                         arrival time                         -12.613    
+  -------------------------------------------------------------------
+                         slack                                  2.215    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.190ns  (arrival time - required time)
+  Source:                 vbc/greenMiddleSquareSpeed_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vbc/greenMiddleSquareSpeed_reg[8]/D
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ClkPort
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkPort rise@0.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        0.590ns  (logic 0.407ns (68.946%)  route 0.183ns (31.054%))
+  Logic Levels:           2  (CARRY4=2)
+  Clock Path Skew:        0.266ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.034ns
+    Source Clock Delay      (SCD):    1.522ns
+    Clock Pessimism Removal (CPR):    0.245ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          0.603     1.522    vbc/ClkPort_IBUF_BUFG
+    SLICE_X80Y99         FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X80Y99         FDRE (Prop_fdre_C_Q)         0.164     1.686 r  vbc/greenMiddleSquareSpeed_reg[4]/Q
+                         net (fo=2, routed)           0.183     1.869    vbc/greenMiddleSquareSpeed_reg[4]
+    SLICE_X80Y99         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.190     2.059 r  vbc/greenMiddleSquareSpeed_reg[4]_i_1/CO[3]
+                         net (fo=1, routed)           0.001     2.060    vbc/greenMiddleSquareSpeed_reg[4]_i_1_n_0
+    SLICE_X80Y100        CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.053     2.113 r  vbc/greenMiddleSquareSpeed_reg[8]_i_1/O[0]
+                         net (fo=1, routed)           0.000     2.113    vbc/greenMiddleSquareSpeed_reg[8]_i_1_n_7
+    SLICE_X80Y100        FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[8]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          0.868     2.034    vbc/ClkPort_IBUF_BUFG
+    SLICE_X80Y100        FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[8]/C
+                         clock pessimism             -0.245     1.788    
+    SLICE_X80Y100        FDRE (Hold_fdre_C_D)         0.134     1.922    vbc/greenMiddleSquareSpeed_reg[8]
+  -------------------------------------------------------------------
+                         required time                         -1.922    
+                         arrival time                           2.113    
+  -------------------------------------------------------------------
+                         slack                                  0.190    
+
+Slack (MET) :             0.199ns  (arrival time - required time)
+  Source:                 vbc/greenMiddleSquareY_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vbc/greenMiddleSquareY_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ClkPort
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkPort rise@0.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        0.303ns  (logic 0.209ns (68.923%)  route 0.094ns (31.077%))
+  Logic Levels:           1  (LUT4=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.043ns
+    Source Clock Delay      (SCD):    1.525ns
+    Clock Pessimism Removal (CPR):    0.504ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          0.606     1.525    vbc/ClkPort_IBUF_BUFG
+    SLICE_X84Y96         FDRE                                         r  vbc/greenMiddleSquareY_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X84Y96         FDRE (Prop_fdre_C_Q)         0.164     1.689 r  vbc/greenMiddleSquareY_reg[2]/Q
+                         net (fo=13, routed)          0.094     1.784    vbc/Q[2]
+    SLICE_X85Y96         LUT4 (Prop_lut4_I3_O)        0.045     1.829 r  vbc/greenMiddleSquareY[3]_i_1/O
+                         net (fo=1, routed)           0.000     1.829    vbc/greenMiddleSquareY[3]_i_1_n_0
+    SLICE_X85Y96         FDRE                                         r  vbc/greenMiddleSquareY_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          0.878     2.043    vbc/ClkPort_IBUF_BUFG
+    SLICE_X85Y96         FDRE                                         r  vbc/greenMiddleSquareY_reg[3]/C
+                         clock pessimism             -0.504     1.538    
+    SLICE_X85Y96         FDRE (Hold_fdre_C_D)         0.091     1.629    vbc/greenMiddleSquareY_reg[3]
+  -------------------------------------------------------------------
+                         required time                         -1.629    
+                         arrival time                           1.829    
+  -------------------------------------------------------------------
+                         slack                                  0.199    
+
+Slack (MET) :             0.203ns  (arrival time - required time)
+  Source:                 vbc/greenMiddleSquareSpeed_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vbc/greenMiddleSquareSpeed_reg[10]/D
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ClkPort
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkPort rise@0.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        0.603ns  (logic 0.420ns (69.615%)  route 0.183ns (30.385%))
+  Logic Levels:           2  (CARRY4=2)
+  Clock Path Skew:        0.266ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.034ns
+    Source Clock Delay      (SCD):    1.522ns
+    Clock Pessimism Removal (CPR):    0.245ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          0.603     1.522    vbc/ClkPort_IBUF_BUFG
+    SLICE_X80Y99         FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X80Y99         FDRE (Prop_fdre_C_Q)         0.164     1.686 r  vbc/greenMiddleSquareSpeed_reg[4]/Q
+                         net (fo=2, routed)           0.183     1.869    vbc/greenMiddleSquareSpeed_reg[4]
+    SLICE_X80Y99         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.190     2.059 r  vbc/greenMiddleSquareSpeed_reg[4]_i_1/CO[3]
+                         net (fo=1, routed)           0.001     2.060    vbc/greenMiddleSquareSpeed_reg[4]_i_1_n_0
+    SLICE_X80Y100        CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.066     2.126 r  vbc/greenMiddleSquareSpeed_reg[8]_i_1/O[2]
+                         net (fo=1, routed)           0.000     2.126    vbc/greenMiddleSquareSpeed_reg[8]_i_1_n_5
+    SLICE_X80Y100        FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[10]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          0.868     2.034    vbc/ClkPort_IBUF_BUFG
+    SLICE_X80Y100        FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[10]/C
+                         clock pessimism             -0.245     1.788    
+    SLICE_X80Y100        FDRE (Hold_fdre_C_D)         0.134     1.922    vbc/greenMiddleSquareSpeed_reg[10]
+  -------------------------------------------------------------------
+                         required time                         -1.922    
+                         arrival time                           2.126    
+  -------------------------------------------------------------------
+                         slack                                  0.203    
+
+Slack (MET) :             0.226ns  (arrival time - required time)
+  Source:                 vbc/greenMiddleSquareSpeed_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vbc/greenMiddleSquareSpeed_reg[9]/D
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ClkPort
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkPort rise@0.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        0.626ns  (logic 0.443ns (70.731%)  route 0.183ns (29.269%))
+  Logic Levels:           2  (CARRY4=2)
+  Clock Path Skew:        0.266ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.034ns
+    Source Clock Delay      (SCD):    1.522ns
+    Clock Pessimism Removal (CPR):    0.245ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          0.603     1.522    vbc/ClkPort_IBUF_BUFG
+    SLICE_X80Y99         FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X80Y99         FDRE (Prop_fdre_C_Q)         0.164     1.686 r  vbc/greenMiddleSquareSpeed_reg[4]/Q
+                         net (fo=2, routed)           0.183     1.869    vbc/greenMiddleSquareSpeed_reg[4]
+    SLICE_X80Y99         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.190     2.059 r  vbc/greenMiddleSquareSpeed_reg[4]_i_1/CO[3]
+                         net (fo=1, routed)           0.001     2.060    vbc/greenMiddleSquareSpeed_reg[4]_i_1_n_0
+    SLICE_X80Y100        CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.089     2.149 r  vbc/greenMiddleSquareSpeed_reg[8]_i_1/O[1]
+                         net (fo=1, routed)           0.000     2.149    vbc/greenMiddleSquareSpeed_reg[8]_i_1_n_6
+    SLICE_X80Y100        FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[9]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          0.868     2.034    vbc/ClkPort_IBUF_BUFG
+    SLICE_X80Y100        FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[9]/C
+                         clock pessimism             -0.245     1.788    
+    SLICE_X80Y100        FDRE (Hold_fdre_C_D)         0.134     1.922    vbc/greenMiddleSquareSpeed_reg[9]
+  -------------------------------------------------------------------
+                         required time                         -1.922    
+                         arrival time                           2.149    
+  -------------------------------------------------------------------
+                         slack                                  0.226    
+
+Slack (MET) :             0.228ns  (arrival time - required time)
+  Source:                 vbc/greenMiddleSquareSpeed_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vbc/greenMiddleSquareSpeed_reg[11]/D
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ClkPort
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkPort rise@0.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        0.628ns  (logic 0.445ns (70.824%)  route 0.183ns (29.176%))
+  Logic Levels:           2  (CARRY4=2)
+  Clock Path Skew:        0.266ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.034ns
+    Source Clock Delay      (SCD):    1.522ns
+    Clock Pessimism Removal (CPR):    0.245ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          0.603     1.522    vbc/ClkPort_IBUF_BUFG
+    SLICE_X80Y99         FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X80Y99         FDRE (Prop_fdre_C_Q)         0.164     1.686 r  vbc/greenMiddleSquareSpeed_reg[4]/Q
+                         net (fo=2, routed)           0.183     1.869    vbc/greenMiddleSquareSpeed_reg[4]
+    SLICE_X80Y99         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.190     2.059 r  vbc/greenMiddleSquareSpeed_reg[4]_i_1/CO[3]
+                         net (fo=1, routed)           0.001     2.060    vbc/greenMiddleSquareSpeed_reg[4]_i_1_n_0
+    SLICE_X80Y100        CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.091     2.151 r  vbc/greenMiddleSquareSpeed_reg[8]_i_1/O[3]
+                         net (fo=1, routed)           0.000     2.151    vbc/greenMiddleSquareSpeed_reg[8]_i_1_n_4
+    SLICE_X80Y100        FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[11]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          0.868     2.034    vbc/ClkPort_IBUF_BUFG
+    SLICE_X80Y100        FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[11]/C
+                         clock pessimism             -0.245     1.788    
+    SLICE_X80Y100        FDRE (Hold_fdre_C_D)         0.134     1.922    vbc/greenMiddleSquareSpeed_reg[11]
+  -------------------------------------------------------------------
+                         required time                         -1.922    
+                         arrival time                           2.151    
+  -------------------------------------------------------------------
+                         slack                                  0.228    
+
+Slack (MET) :             0.230ns  (arrival time - required time)
+  Source:                 vbc/greenMiddleSquareSpeed_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vbc/greenMiddleSquareSpeed_reg[12]/D
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ClkPort
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkPort rise@0.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        0.630ns  (logic 0.447ns (70.917%)  route 0.183ns (29.083%))
+  Logic Levels:           3  (CARRY4=3)
+  Clock Path Skew:        0.266ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.034ns
+    Source Clock Delay      (SCD):    1.522ns
+    Clock Pessimism Removal (CPR):    0.245ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          0.603     1.522    vbc/ClkPort_IBUF_BUFG
+    SLICE_X80Y99         FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X80Y99         FDRE (Prop_fdre_C_Q)         0.164     1.686 r  vbc/greenMiddleSquareSpeed_reg[4]/Q
+                         net (fo=2, routed)           0.183     1.869    vbc/greenMiddleSquareSpeed_reg[4]
+    SLICE_X80Y99         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.190     2.059 r  vbc/greenMiddleSquareSpeed_reg[4]_i_1/CO[3]
+                         net (fo=1, routed)           0.001     2.060    vbc/greenMiddleSquareSpeed_reg[4]_i_1_n_0
+    SLICE_X80Y100        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.040     2.100 r  vbc/greenMiddleSquareSpeed_reg[8]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     2.100    vbc/greenMiddleSquareSpeed_reg[8]_i_1_n_0
+    SLICE_X80Y101        CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.053     2.153 r  vbc/greenMiddleSquareSpeed_reg[12]_i_1/O[0]
+                         net (fo=1, routed)           0.000     2.153    vbc/greenMiddleSquareSpeed_reg[12]_i_1_n_7
+    SLICE_X80Y101        FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[12]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          0.868     2.034    vbc/ClkPort_IBUF_BUFG
+    SLICE_X80Y101        FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[12]/C
+                         clock pessimism             -0.245     1.788    
+    SLICE_X80Y101        FDRE (Hold_fdre_C_D)         0.134     1.922    vbc/greenMiddleSquareSpeed_reg[12]
+  -------------------------------------------------------------------
+                         required time                         -1.922    
+                         arrival time                           2.153    
+  -------------------------------------------------------------------
+                         slack                                  0.230    
+
+Slack (MET) :             0.243ns  (arrival time - required time)
+  Source:                 vbc/greenMiddleSquareSpeed_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            vbc/greenMiddleSquareSpeed_reg[14]/D
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ClkPort
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkPort rise@0.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        0.643ns  (logic 0.460ns (71.505%)  route 0.183ns (28.495%))
+  Logic Levels:           3  (CARRY4=3)
+  Clock Path Skew:        0.266ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.034ns
+    Source Clock Delay      (SCD):    1.522ns
+    Clock Pessimism Removal (CPR):    0.245ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          0.603     1.522    vbc/ClkPort_IBUF_BUFG
+    SLICE_X80Y99         FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X80Y99         FDRE (Prop_fdre_C_Q)         0.164     1.686 r  vbc/greenMiddleSquareSpeed_reg[4]/Q
+                         net (fo=2, routed)           0.183     1.869    vbc/greenMiddleSquareSpeed_reg[4]
+    SLICE_X80Y99         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.190     2.059 r  vbc/greenMiddleSquareSpeed_reg[4]_i_1/CO[3]
+                         net (fo=1, routed)           0.001     2.060    vbc/greenMiddleSquareSpeed_reg[4]_i_1_n_0
+    SLICE_X80Y100        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.040     2.100 r  vbc/greenMiddleSquareSpeed_reg[8]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     2.100    vbc/greenMiddleSquareSpeed_reg[8]_i_1_n_0
+    SLICE_X80Y101        CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.066     2.166 r  vbc/greenMiddleSquareSpeed_reg[12]_i_1/O[2]
+                         net (fo=1, routed)           0.000     2.166    vbc/greenMiddleSquareSpeed_reg[12]_i_1_n_5
+    SLICE_X80Y101        FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[14]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          0.868     2.034    vbc/ClkPort_IBUF_BUFG
+    SLICE_X80Y101        FDRE                                         r  vbc/greenMiddleSquareSpeed_reg[14]/C
+                         clock pessimism             -0.245     1.788    
+    SLICE_X80Y101        FDRE (Hold_fdre_C_D)         0.134     1.922    vbc/greenMiddleSquareSpeed_reg[14]
+  -------------------------------------------------------------------
+                         required time                         -1.922    
+                         arrival time                           2.166    
+  -------------------------------------------------------------------
+                         slack                                  0.243    
+
+Slack (MET) :             0.254ns  (arrival time - required time)
+  Source:                 cnt/refresh_reg[10]/C
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            cnt/refresh_reg[10]/D
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ClkPort
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkPort rise@0.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        0.388ns  (logic 0.274ns (70.550%)  route 0.114ns (29.450%))
+  Logic Levels:           1  (CARRY4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.037ns
+    Source Clock Delay      (SCD):    1.519ns
+    Clock Pessimism Removal (CPR):    0.517ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          0.600     1.519    cnt/ClkPort_IBUF_BUFG
+    SLICE_X88Y107        FDRE                                         r  cnt/refresh_reg[10]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X88Y107        FDRE (Prop_fdre_C_Q)         0.164     1.683 r  cnt/refresh_reg[10]/Q
+                         net (fo=1, routed)           0.114     1.798    cnt/refresh_reg_n_0_[10]
+    SLICE_X88Y107        CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.110     1.908 r  cnt/refresh_reg[8]_i_1/O[2]
+                         net (fo=1, routed)           0.000     1.908    cnt/refresh_reg[8]_i_1_n_5
+    SLICE_X88Y107        FDRE                                         r  cnt/refresh_reg[10]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          0.871     2.037    cnt/ClkPort_IBUF_BUFG
+    SLICE_X88Y107        FDRE                                         r  cnt/refresh_reg[10]/C
+                         clock pessimism             -0.517     1.519    
+    SLICE_X88Y107        FDRE (Hold_fdre_C_D)         0.134     1.653    cnt/refresh_reg[10]
+  -------------------------------------------------------------------
+                         required time                         -1.653    
+                         arrival time                           1.908    
+  -------------------------------------------------------------------
+                         slack                                  0.254    
+
+Slack (MET) :             0.254ns  (arrival time - required time)
+  Source:                 cnt/refresh_reg[14]/C
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            cnt/refresh_reg[14]/D
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ClkPort
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkPort rise@0.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        0.388ns  (logic 0.274ns (70.550%)  route 0.114ns (29.450%))
+  Logic Levels:           1  (CARRY4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.037ns
+    Source Clock Delay      (SCD):    1.519ns
+    Clock Pessimism Removal (CPR):    0.517ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          0.600     1.519    cnt/ClkPort_IBUF_BUFG
+    SLICE_X88Y108        FDRE                                         r  cnt/refresh_reg[14]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X88Y108        FDRE (Prop_fdre_C_Q)         0.164     1.683 r  cnt/refresh_reg[14]/Q
+                         net (fo=1, routed)           0.114     1.798    cnt/refresh_reg_n_0_[14]
+    SLICE_X88Y108        CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.110     1.908 r  cnt/refresh_reg[12]_i_1/O[2]
+                         net (fo=1, routed)           0.000     1.908    cnt/refresh_reg[12]_i_1_n_5
+    SLICE_X88Y108        FDRE                                         r  cnt/refresh_reg[14]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          0.871     2.037    cnt/ClkPort_IBUF_BUFG
+    SLICE_X88Y108        FDRE                                         r  cnt/refresh_reg[14]/C
+                         clock pessimism             -0.517     1.519    
+    SLICE_X88Y108        FDRE (Hold_fdre_C_D)         0.134     1.653    cnt/refresh_reg[14]
+  -------------------------------------------------------------------
+                         required time                         -1.653    
+                         arrival time                           1.908    
+  -------------------------------------------------------------------
+                         slack                                  0.254    
+
+Slack (MET) :             0.254ns  (arrival time - required time)
+  Source:                 cnt/refresh_reg[18]/C
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            cnt/refresh_reg[18]/D
+                            (rising edge-triggered cell FDRE clocked by ClkPort  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ClkPort
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkPort rise@0.000ns - ClkPort rise@0.000ns)
+  Data Path Delay:        0.388ns  (logic 0.274ns (70.550%)  route 0.114ns (29.450%))
+  Logic Levels:           1  (CARRY4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.037ns
+    Source Clock Delay      (SCD):    1.519ns
+    Clock Pessimism Removal (CPR):    0.517ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          0.600     1.519    cnt/ClkPort_IBUF_BUFG
+    SLICE_X88Y109        FDRE                                         r  cnt/refresh_reg[18]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X88Y109        FDRE (Prop_fdre_C_Q)         0.164     1.683 r  cnt/refresh_reg[18]/Q
+                         net (fo=1, routed)           0.114     1.798    cnt/refresh_reg_n_0_[18]
+    SLICE_X88Y109        CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.110     1.908 r  cnt/refresh_reg[16]_i_1/O[2]
+                         net (fo=1, routed)           0.000     1.908    cnt/refresh_reg[16]_i_1_n_5
+    SLICE_X88Y109        FDRE                                         r  cnt/refresh_reg[18]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkPort rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  ClkPort (IN)
+                         net (fo=0)                   0.000     0.000    ClkPort
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  ClkPort_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    ClkPort_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  ClkPort_IBUF_BUFG_inst/O
+                         net (fo=99, routed)          0.871     2.037    cnt/ClkPort_IBUF_BUFG
+    SLICE_X88Y109        FDRE                                         r  cnt/refresh_reg[18]/C
+                         clock pessimism             -0.517     1.519    
+    SLICE_X88Y109        FDRE (Hold_fdre_C_D)         0.134     1.653    cnt/refresh_reg[18]
+  -------------------------------------------------------------------
+                         required time                         -1.653    
+                         arrival time                           1.908    
+  -------------------------------------------------------------------
+                         slack                                  0.254    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         ClkPort
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { ClkPort }
+
+Check Type        Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
+Min Period        n/a     BUFG/I   n/a            2.155         10.000      7.845      BUFGCTRL_X0Y16  ClkPort_IBUF_BUFG_inst/I
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X88Y107   cnt/refresh_reg[10]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X88Y107   cnt/refresh_reg[11]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X88Y108   cnt/refresh_reg[12]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X88Y108   cnt/refresh_reg[13]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X88Y108   cnt/refresh_reg[14]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X88Y108   cnt/refresh_reg[15]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X88Y109   cnt/refresh_reg[16]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X88Y109   cnt/refresh_reg[17]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X88Y109   cnt/refresh_reg[18]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X80Y100   vbc/greenMiddleSquareSpeed_reg[10]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X80Y100   vbc/greenMiddleSquareSpeed_reg[11]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X80Y101   vbc/greenMiddleSquareSpeed_reg[12]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X80Y101   vbc/greenMiddleSquareSpeed_reg[13]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X80Y101   vbc/greenMiddleSquareSpeed_reg[14]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X80Y101   vbc/greenMiddleSquareSpeed_reg[15]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X80Y102   vbc/greenMiddleSquareSpeed_reg[16]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X80Y102   vbc/greenMiddleSquareSpeed_reg[17]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X80Y102   vbc/greenMiddleSquareSpeed_reg[18]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X80Y102   vbc/greenMiddleSquareSpeed_reg[19]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X88Y107   cnt/refresh_reg[10]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X88Y107   cnt/refresh_reg[11]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X88Y108   cnt/refresh_reg[12]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X88Y108   cnt/refresh_reg[13]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X88Y108   cnt/refresh_reg[14]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X88Y108   cnt/refresh_reg[15]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X88Y109   cnt/refresh_reg[16]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X88Y109   cnt/refresh_reg[17]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X88Y109   cnt/refresh_reg[18]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X88Y109   cnt/refresh_reg[19]/C
+
+
+

@@ -9,33 +9,41 @@ module block_controller(
 	output reg [11:0] rgb,
 	output reg [11:0] background
    );
-	wire block_fill;
+	wire green_block;
+	wire red_block;
 	
 	//these two values dictate the center of the block, incrementing and decrementing them leads the block to move in certain directions
-	reg [9:0] xpos, ypos;
+	reg [9:0] gxpos, gypos, rxpos, rypos;
 	
 	parameter RED   = 12'b1111_0000_0000;
+	parameter GREEN = 12'b0000_1111_0000;
+	parameter WHITE = 12'b1111_1111_1111;
 	
 	/*when outputting the rgb value in an always block like this, make sure to include the if(~bright) statement, as this ensures the monitor 
 	will output some data to every pixel and not just the images you are trying to display*/
 	always@ (*) begin
     	if(~bright )	//force black if not inside the display area
 			rgb = 12'b0000_0000_0000;
-		else if (block_fill) 
+		else if (red_block) 
 			rgb = RED; 
+		else if (green_block)
+			rgb = GREEN
 		else	
-			rgb=background;
+			rgb= WHITE;
 	end
 		//the +-5 for the positions give the dimension of the block (i.e. it will be 10x10 pixels)
-	assign block_fill=vCount>=(ypos-5) && vCount<=(ypos+5) && hCount>=(xpos-5) && hCount<=(xpos+5);
+	assign green_block=vCount>=(gypos-10) && vCount<=(gypos+10) && hCount>=(gxpos-5) && hCount<=(gxpos+5);
+	assign red_block=vCount>=(rypos-10) && vCount<=(rypos+10) && hCount>=(rxpos-5) && hCount<=(rxpos+5);
 	
 	always@(posedge clk, posedge rst) 
 	begin
 		if(rst)
 		begin 
 			//rough values for center of screen
-			xpos<=450;
-			ypos<=250;
+			gxpos<=149;
+			gypos<=45;
+			rxpos<=788;
+			rypos<=525;
 		end
 		else if (clk) begin
 		
@@ -46,24 +54,37 @@ module block_controller(
 			corresponds to ~(783,515).  
 		*/
 			if(right) begin
-				xpos<=xpos+2; //change the amount you increment to make the speed faster 
-				if(xpos==800) //these are rough values to attempt looping around, you can fine-tune them to make it more accurate- refer to the block comment above
-					xpos<=150;
+				rxpos<=rxpos+2; //change the amount you increment to make the speed faster 
+				gxpos<=gxpos+2;
+
+				if(gxpos==800) //these are rough values to attempt looping around, you can fine-tune them to make it more accurate- refer to the block comment above
+					gxpos<=150;
+				if(rxpos==800) //these are rough values to attempt looping around, you can fine-tune them to make it more accurate- refer to the block comment above
+					rxpos<=150;
 			end
 			else if(left) begin
-				xpos<=xpos-2;
-				if(xpos==150)
-					xpos<=800;
+				gxpos<=gxpos-2;
+				rxpos<=rxpos-2;
+				if(gxpos==150)
+					gxpos<=800;
+				if(rxpos==150)
+					rxpos<=800;
 			end
 			else if(up) begin
-				ypos<=ypos-2;
-				if(ypos==34)
-					ypos<=514;
+				gypos<=gypos-2;
+				rypos<=rypos-2;
+				if(gypos==34)
+					gypos<=514;
+				if(rypos==34)
+					rypos<=514;
 			end
 			else if(down) begin
-				ypos<=ypos+2;
-				if(ypos==514)
-					ypos<=34;
+				rypos<=rypos+2;
+				gypos<=gypos+2;
+				if(rypos==514)
+					rypos<=34;
+				if(gypos==514)
+					gypos<=34;
 			end
 		end
 	end

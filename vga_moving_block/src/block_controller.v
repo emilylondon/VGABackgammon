@@ -8,13 +8,11 @@ module block_controller(
 	input [9:0] hCount, vCount,
 	output reg [11:0] rgb,
    );
-   
-	wire green_block;
-	wire red_triangle;
-	wire blue_circle; 
+
+	wire head; wire larm; wire rarm; wire lleg; wire rleg; wire torso; wire rod; wire jut; wire line; 
 	
 	//these two values dictate the center of the block, incrementing and decrementing them leads the block to move in certain directions
-	reg [9:0] gxpos, gypos, rxpos, rypos, bxpos, bypos;
+	reg [9:0] rpos, ypos;
 	
 	parameter RED   = 12'b1111_0000_0000;
 	parameter GREEN = 12'b0000_1111_0000;
@@ -26,31 +24,33 @@ module block_controller(
 	always@ (*) begin
     	if(~bright )	//force black if not inside the display area
 			rgb = 12'b0000_0000_0000;
-		else if (red_triangle) 
+		else if (head || larm || rarm || lleg || rleg || torso) 
 			rgb = RED; 
-		else if (green_block)
+		else if (rod || jut || line)
 			rgb = GREEN;
-		else if (blue_circle)
+		else if (vCount>=155)
 			rgb = BLUE;
 		else	
 			rgb= WHITE;
 	end
 		//the +-5 for the positions give the dimension of the block (i.e. it will be 10x10 pixels)
-	assign green_block=vCount>=(gypos-10) && vCount<=(gypos+10) && hCount>=(gxpos-5) && hCount<=(gxpos+5);
-	assign red_triangle=vCount>=(rypos-10) && vCount<=(2*(hCount-rxpos)+5) && vcount<=(-2*(hCount-rxpos)+5);
-	assign blue_circle=vCount<=((5-(hCount-bxpos))**(1/2)+bypos) && vCount>=(-(5-(hCount-bxpos))**(1/2)+bypos);
+	assign head=vCount>=75 && vCount<=85 && hCount>=(rpos-120) && hCount<=(rpos-100);
+	assign torso=vCount>=85 && vCount<=115 && hCount>=(rpos-140) && hCount<=(rpos-80);
+	assign larm=vCount>=85 && vCount<=125 && hCount>=(rpos-160) && hCount <=(rpos-140);
+	assign rarm=vCount>=85 && vCount<=125 && hCount>=(rpos-80) && hCount <=(rpos-60);
+	assign lleg=vCount>=115 && vCount<=155 && hCount>=(rpos-140) && hCount<=(rpos-120);
+	assign rleg=vCount>=115 && vCount<=155 && hCount>=(rpos-100) && hCount<=(rpos-80);
+	assign rod=vCount>=75 && vCount<=155 && hCount>=(rpos-60) && hCount<=(rpos-50);
+	assign jut=vCount>=75 && vCount<=80 && hCount>=(rpos-50) && hCount<=(rpos-5);
+	assign line=vCount>=75 && vCount<=ypos && hCount>=(rpos-5) && hCount<=rpos;
 	
 	always@(posedge clk, posedge rst) 
 	begin
 		if(rst)
 		begin 
 			//rough values for center of screen
-			gxpos<=149;
-			gypos<=45;
-			rxpos<=788;
-			rypos<=525;
-			bxpos<=450;
-			bypos<=300;
+			rpos<=450;
+			ypos<=155;
 		end
 		else if (clk) begin
 		
@@ -61,49 +61,24 @@ module block_controller(
 			corresponds to ~(783,515).  
 		*/
 			if(right) begin
-				rxpos<=rxpos+2; //change the amount you increment to make the speed faster 
-				gxpos<=gxpos+2;
-				bxpos<=bxpos+2;
+				rpos<=rpos+2; //change the amount you increment to make the speed faster 
 
-				if(gxpos==800) //these are rough values to attempt looping around, you can fine-tune them to make it more accurate- refer to the block comment above
-					gxpos<=150;
-				if(rxpos==800) //these are rough values to attempt looping around, you can fine-tune them to make it more accurate- refer to the block comment above
-					rxpos<=150;
-				if(bxpos==800) //these are rough values to attempt looping around, you can fine-tune them to make it more accurate- refer to the block comment above
-					bxpos<=150;
+				if(rpos==800) //these are rough values to attempt looping around, you can fine-tune them to make it more accurate- refer to the block comment above
+					rpos<=310;
 			end
 			else if(left) begin
-				gxpos<=gxpos-2;
-				rxpos<=rxpos-2;
-				bxpos<=bxpos-2;
-				if(gxpos==150)
-					gxpos<=800;
-				if(rxpos==150)
-					rxpos<=800;
-				if(bxpos==150)
-					bxpos<=800;
+				rpos<=rpos-2;
+				
+				if(rpos==310)
+					rpos<=800;
 			end
 			else if(up) begin
-				gypos<=gypos-2;
-				rypos<=rypos-2;
-				bypos<=bypos-2;
-				if(gypos==34)
-					gypos<=514;
-				if(rypos==34)
-					rypos<=514;
-				if(bypos==34)
-					bypos<=514;
+				if (ypos!=155)
+					ypos<=ypos-2;
 			end
 			else if(down) begin
-				rypos<=rypos+2;
-				gypos<=gypos+2;
-				bypos<=bypos+2;
-				if(rypos==514)
-					rypos<=34;
-				if(gypos==514)
-					gypos<=34;
-				if(bypos==514)
-					bypos<=34;
+				if(ypos!=514)
+					ypos<=ypos+2;
 			end
 		end
 	end

@@ -21,6 +21,7 @@ module block_controller(
 	parameter BLUE  = 12'b0000_0000_1111;
 	parameter WHITE = 12'b1111_1111_1111;
 	parameter ORANGE = 12'b1110_1001_0100;
+	parameter BROWN = 12'b0110_0010_0001;
 	
 	/*when outputting the rgb value in an always block like this, make sure to include the if(~bright) statement, as this ensures the monitor 
 	will output some data to every pixel and not just the images you are trying to display*/
@@ -29,6 +30,8 @@ module block_controller(
 			rgb = 12'b0000_0000_0000;
 		else if (head || larm || rarm || lleg || rleg || torso) 
 			rgb = RED; 
+		else if (buoy || rbuoy || lbuoy)
+			rgb = BROWN;
 		else if (rod || jut || line)
 			rgb = GREEN;
 		else if ((fish1 && ypos>=425 && ypos<515) || (fish2 && ypos>=335 && ypos<425) ||

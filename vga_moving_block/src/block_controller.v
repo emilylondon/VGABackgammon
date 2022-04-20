@@ -28,10 +28,10 @@ module block_controller(
 	always@ (*) begin
     	if(~bright )	//force black if not inside the display area
 			rgb = 12'b0000_0000_0000;
-		else if (head || larm || rarm || lleg || rleg || torso) 
-			rgb = RED; 
 		else if (buoy || rbuoy || lbuoy)
 			rgb = BROWN;
+		else if (head || larm || rarm || lleg || rleg || torso) 
+			rgb = RED; 
 		else if (rod || jut || line)
 			rgb = GREEN;
 		else if ((fish1 && ypos>=425 && ypos<515) || (fish2 && ypos>=335 && ypos<425) ||

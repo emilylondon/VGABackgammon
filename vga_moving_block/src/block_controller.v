@@ -7,8 +7,8 @@ module block_controller(
 	input up, input down, input left, input right,
 	input [9:0] hCount, vCount,
 	output reg [11:0] rgb;
-	reg [8:0] q_F1, q_C1, q_F2, q_C2, q_F3, q_C3, q_F4, q_C4, q_W;
-
+	wire q_F1, q_C1, q_F2, q_C2, q_F3, q_C3, q_F4, q_C4, q_W;
+    reg[8:0] state;
 	assign {q_W, q_C4, q_F4, q_C3, q_F3, q_C2, q_F2, q_C1, q_F1} = state;
 
 	wire head; wire larm; wire rarm; wire lleg; wire rleg; wire torso; wire rod; wire jut; wire line; 
@@ -48,8 +48,8 @@ module block_controller(
 			rgb = BROWN;
 		else if (head || larm || rarm || lleg || rleg || torso) 
 			rgb = RED; 
-		else if ((fish1 && state==(F1 || C1)) || (fish2 && state==(F2 || C2)) ||
-		         (fish3 && state==(F3 || C3)) || (fish4 && state==(F4 || C4)))
+		else if ((fish1 && (state==F1 || state==C1)) || (fish2 && (state==F2 || state==C2)) ||
+		         (fish3 && (state==F3 || state==C3)) || (fish4 && (state==F4 || state==C4)))
 			rgb = ORANGE; 
 		else if (rod || jut || line)
 			rgb = GREEN;
@@ -103,7 +103,7 @@ module block_controller(
 				F1:
 				begin 
 					fpos<=fpos-2;
-					if (fpos==312) 
+					if (fpos==144) 
 						fpos<=798;
 					if (ypos<=466)
 						ypos<=ypos+4;
@@ -134,7 +134,7 @@ module block_controller(
 				F2: 
 				begin
 					fpos<=fpos-2;
-					if(fpos==312)
+					if(fpos==144)
 						fpos<=798;
 					if (ypos<=376)
 						ypos<=ypos+4;
@@ -165,7 +165,7 @@ module block_controller(
 				F3: 
 				begin
 					fpos<=fpos-2;
-					if(fpos==312)
+					if(fpos==144)
 						fpos<=798;
 					if (ypos<=286)
 						ypos<=ypos+4;
@@ -196,7 +196,7 @@ module block_controller(
 				F4: 
 				begin
 					fpos<=fpos-2;
-					if(fpos==312)
+					if(fpos==144)
 						fpos<=798;
 					if (ypos<=296)
 						ypos<=ypos+4;
@@ -227,6 +227,7 @@ module block_controller(
 					if (up || down || right || left)
 						state<=F1;
 				end 
+			endcase
 			
 		end
 	end

@@ -61,23 +61,23 @@ module block_controller(
 			rgb= WHITE;
 	end
 		//the +-5 for the positions give the dimension of the block (i.e. it will be 10x10 pixels)
-	assign head=vCount>=75 && vCount<=85 && hCount>=(rpos-120) && hCount<=(rpos-100);
-	assign torso=vCount>=85 && vCount<=115 && hCount>=(rpos-140) && hCount<=(rpos-80);
-	assign larm=vCount>=85 && vCount<=125 && hCount>=(rpos-160) && hCount <=(rpos-140);
-	assign rarm=vCount>=85 && vCount<=125 && hCount>=(rpos-80) && hCount <=(rpos-60);
-	assign lleg=vCount>=115 && vCount<=155 && hCount>=(rpos-140) && hCount<=(rpos-120);
-	assign rleg=vCount>=115 && vCount<=155 && hCount>=(rpos-100) && hCount<=(rpos-80);
-	assign buoy=vCount>=145 && vCount<=155 && hCount>=(rpos-150) && hCount<=(rpos-70);
-	assign lbuoy=vCount>=135 && vCount<=155 && hCount>=(rpos-170) && hCount<=(rpos-150);
-	assign rbuoy=vCount>=135 && vCount<=155 && hCount>=(rpos-70) && hCount<=(rpos-50);
-	assign rod=vCount>=75 && vCount<=125 && hCount>=(rpos-60) && hCount<=(rpos-50);
-	assign jut=vCount>=75 && vCount<=80 && hCount>=(rpos-50) && hCount<=(rpos-5);
-	assign line=vCount>=75 && vCount<=ypos && hCount>=(rpos-5) && hCount<=rpos;
-	assign fish1=vCount>=(fypos-10) && vCount<=(fypos+10) && hCount>=fpos && hCount<=(fpos+60);
-	assign fish2=vCount>=(fypos-8) && vCount<=(fypos+8) && hCount>=fpos && hCount<=(fpos+40);
-	assign fish3=vCount>=(fypos-5) && vCount<=(fypos+5) && hCount>=fpos && hCount<=(fpos+20);
-	assign fish4=vCount>=(fypos-3) && vCount<=(fypos+3) && hCount>=fpos && hCount<=(fpos+10);
-	assign sun=vCount>=55 && vCount<=95 && hCount>=720 && hCount<=760;
+	assign head=vCount>=75 && vCount<85 && hCount>=(rpos-120) && hCount<(rpos-100);
+	assign torso=vCount>=85 && vCount<115 && hCount>=(rpos-140) && hCount<(rpos-80);
+	assign larm=vCount>=85 && vCount<125 && hCount>=(rpos-160) && hCount <(rpos-140);
+	assign rarm=vCount>=85 && vCount<125 && hCount>=(rpos-80) && hCount <(rpos-60);
+	assign lleg=vCount>=115 && vCount<155 && hCount>=(rpos-140) && hCount<(rpos-120);
+	assign rleg=vCount>=115 && vCount<155 && hCount>=(rpos-100) && hCount<(rpos-80);
+	assign buoy=vCount>=145 && vCount<155 && hCount>=(rpos-150) && hCount<(rpos-70);
+	assign lbuoy=vCount>=135 && vCount<155 && hCount>=(rpos-170) && hCount<(rpos-150);
+	assign rbuoy=vCount>=135 && vCount<155 && hCount>=(rpos-70) && hCount<(rpos-50);
+	assign rod=vCount>=75 && vCount<125 && hCount>=(rpos-60) && hCount<(rpos-50);
+	assign jut=vCount>=75 && vCount<80 && hCount>=(rpos-50) && hCount<(rpos-5);
+	assign line=vCount>=75 && vCount<ypos && hCount>=(rpos-5) && hCount<rpos;
+	assign fish1=vCount>=(fypos-10) && vCount<(fypos+10) && hCount>=fpos && hCount<(fpos+60);
+	assign fish2=vCount>=(fypos-8) && vCount<(fypos+8) && hCount>=fpos && hCount<(fpos+40);
+	assign fish3=vCount>=(fypos-5) && vCount<(fypos+5) && hCount>=fpos && hCount<(fpos+20);
+	assign fish4=vCount>=(fypos-3) && vCount<(fypos+3) && hCount>=fpos && hCount<(fpos+10);
+	assign sun=vCount>=55 && vCount<95 && hCount>=720 && hCount<760;
 	
 	//f1ypos = 470, f2ypos = 380, f3ypos=290, f3ypos=200
 
@@ -107,12 +107,12 @@ module block_controller(
 					fpos<=fpos-2;
 					if (fpos==144) 
 						fpos<=798;
-					if (ypos<=466)
+					if (ypos<466)
 						ypos<=ypos+4;
-					if (up && rpos>=fpos && rpos<=(fpos+15) && ypos>=(fypos-10) && ypos<=(fypos+10))
+					if (up && rpos>=fpos && rpos<(fpos+15) && ypos>=(fypos-10) && ypos<(fypos+10))
 						state<=C1;
 					if(right) begin
-						if(rpos<=798) 
+						if(rpos<798) 
 							rpos<=rpos+2;
 					end
 					else if(left) begin
@@ -123,7 +123,7 @@ module block_controller(
 
 				C1:
 				begin
-					if (fypos<=105)
+					if (fypos<105)
 						state<=F2;
 						fpos<=798;
 						fypos<=380;
@@ -139,12 +139,12 @@ module block_controller(
 					fpos<=fpos-2;
 					if(fpos==144)
 						fpos<=798;
-					if (ypos<=376)
+					if (ypos<376)
 						ypos<=ypos+4;
-					if (up && rpos>=fpos && rpos<=(fpos+10) && ypos>=(fypos-8) && ypos<=(fypos+8))
+					if (up && rpos>=fpos && rpos<(fpos+10) && ypos>=(fypos-8) && ypos<(fypos+8))
 						state<=C2;
 					if(right) begin
-						if(rpos<=798) 
+						if(rpos<798) 
 							rpos<=rpos+2;
 					end
 					else if(left) begin
@@ -155,7 +155,7 @@ module block_controller(
 
 				C2: 
 				begin
-					if (fypos<=105)
+					if (fypos<105)
 						state<=F3;
 						fpos<=798;
 						fypos<=290;
@@ -170,12 +170,12 @@ module block_controller(
 					fpos<=fpos-2;
 					if(fpos==144)
 						fpos<=798;
-					if (ypos<=286)
+					if (ypos<286)
 						ypos<=ypos+4;
-					if (up && rpos>=fpos && rpos<=(fpos+5) && ypos>=(fypos-5) && ypos<=(fypos+5))
+					if (up && rpos>=fpos && rpos<(fpos+5) && ypos>=(fypos-5) && ypos<(fypos+5))
 						state<=C3;
 					if(right) begin
-						if(rpos<=798) 
+						if(rpos<798) 
 							rpos<=rpos+2;
 					end
 					else if(left) begin
@@ -186,7 +186,7 @@ module block_controller(
 
 				C3: 
 				begin
-					if (fypos<=105)
+					if (fypos<105)
 						state<=F4;
 						fpos<=798;
 						fypos<=200;
@@ -201,12 +201,12 @@ module block_controller(
 					fpos<=fpos-2;
 					if(fpos==144)
 						fpos<=798;
-					if (ypos<=296)
+					if (ypos<296)
 						ypos<=ypos+4;
 					if (up && rpos>=fpos && rpos<=(fpos+3) && ypos>=(fypos-3) && ypos<=(fypos+3))
 						state<=C4;
 					if(right) begin
-						if(rpos<=798) 
+						if(rpos<798) 
 							rpos<=rpos+2;
 					end
 					else if(left) begin
@@ -215,9 +215,9 @@ module block_controller(
 					end
 				end 
 
-				C3: 
+				C4: 
 				begin
-					if (fypos<=105)
+					if (fypos<105)
 						state<=W;
 					if(up) begin
 						fypos<=fypos-2;

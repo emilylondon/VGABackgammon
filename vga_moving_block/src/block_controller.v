@@ -6,15 +6,14 @@ module block_controller(
 	input rst,
 	input up, input down, input left, input right,
 	input [9:0] hCount, vCount,
-	output reg [11:0] rgb,
-   );
+	output reg [11:0] rgb);
 
 	wire head; wire larm; wire rarm; wire lleg; wire rleg; wire torso; wire rod; wire jut; wire line; 
 	wire fish1; wire fish2; wire fish3; wire fish4; 
 	wire buoy; wire lbuoy; wire rbuoy;
 	
 	//these two values dictate the center of the block, incrementing and decrementing them leads the block to move in certain directions
-	reg [9:0] rpos, ypos;
+	reg [9:0] rpos, ypos, fpos;
 	
 	parameter RED   = 12'b1111_0000_0000;
 	parameter GREEN = 12'b0000_1111_0000;

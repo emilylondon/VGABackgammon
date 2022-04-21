@@ -6,7 +6,7 @@ module block_controller(
 	input rst,
 	input up, input down, input left, input right,
 	input [9:0] hCount, vCount,
-	output reg [11:0] rgb;
+	output reg [11:0] rgb);
 	wire q_F1, q_C1, q_F2, q_C2, q_F3, q_C3, q_F4, q_C4, q_W;
     reg[8:0] state;
 	assign {q_W, q_C4, q_F4, q_C3, q_F3, q_C2, q_F2, q_C1, q_F1} = state;
@@ -53,6 +53,7 @@ module block_controller(
 			rgb = ORANGE; 
 		else if (rod || jut || line)
 			rgb = GREEN;
+		else if (sun && state==W) rgb=YELLOW;
 		else if (vCount>=155)
 			rgb = BLUE;
 		else	

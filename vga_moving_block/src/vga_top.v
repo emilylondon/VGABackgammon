@@ -85,9 +85,9 @@ module vga_top(
 	//SSDs display 
 	//to show how we can interface our "game" module with the SSD's, we output the 12-bit rgb background value to the SSD's
 	assign SSD3 = 4'b0000;
-	assign SSD2 =rgb[11:8];
-	assign SSD1 =rgb[7:4];
-	assign SSD0 = rgb[3:0];
+	assign SSD2 =4'b0000;
+	assign SSD1 =4'b0000;
+	assign SSD0 = 4'b0000;
 
 
 	// need a scan clk for the seven segment display 

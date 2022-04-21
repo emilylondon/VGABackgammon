@@ -48,12 +48,13 @@ module block_controller(
 			rgb = BROWN;
 		else if (head || larm || rarm || lleg || rleg || torso) 
 			rgb = RED; 
-		else if ((fish1 && (state==F1 || state==C1)) || (fish2 && (state==F2 || state==C2)) ||
+		else if (fish1 && state==F1 || fish1 && state==C1 || (fish2 && (state==F2 || state==C2)) ||
 		         (fish3 && (state==F3 || state==C3)) || (fish4 && (state==F4 || state==C4)))
 			rgb = ORANGE; 
 		else if (rod || jut || line)
 			rgb = GREEN;
-		else if (sun && state==W) rgb=YELLOW;
+		else if (sun && state==W) 
+			rgb=YELLOW;
 		else if (vCount>=155)
 			rgb = BLUE;
 		else	
@@ -134,6 +135,7 @@ module block_controller(
 
 				F2: 
 				begin
+					fypos<=380;
 					fpos<=fpos-2;
 					if(fpos==144)
 						fpos<=798;

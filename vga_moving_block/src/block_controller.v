@@ -113,16 +113,17 @@ module block_controller(
 						state<=C1;
 					if(right) begin
 						if(rpos<=798) 
-							rpos<=rpos+2;
+							rpos<=rpos+3;
 					end
 					else if(left) begin
 						if(rpos>=312)
-							rpos<=rpos-2;
+							rpos<=rpos-3;
 					end
 				end
 
 				C1:
 				begin
+					fpos <= rpos;
 					if (fypos<=105)
 						state<=F2;
 						fpos<=798;
@@ -145,16 +146,17 @@ module block_controller(
 						state<=C2;
 					if(right) begin
 						if(rpos<=798) 
-							rpos<=rpos+2;
+							rpos<=rpos+3;
 					end
 					else if(left) begin
 						if(rpos>=312)
-							rpos<=rpos-2;
+							rpos<=rpos-3;
 					end
 				end 
 
 				C2: 
 				begin
+					fpos <= rpos;
 					if (fypos<=105)
 						state<=F3;
 						fpos<=798;
@@ -177,16 +179,17 @@ module block_controller(
 						state<=C3;
 					if(right) begin
 						if(rpos<=798) 
-							rpos<=rpos+2;
+							rpos<=rpos+3;
 					end
 					else if(left) begin
 						if(rpos>=312)
-							rpos<=rpos-2;
+							rpos<=rpos-3;
 					end
 				end 
 
 				C3: 
 				begin
+					fpos <= rpos;
 					if (fypos<=105)
 						state<=F4;
 						fpos<=798;
@@ -200,20 +203,21 @@ module block_controller(
 				F4: 
 				begin
 					fypos <= 200;
+					
 					fpos<=fpos-2;
 					if(fpos==144)
 						fpos<=798;
-					if (ypos<=296)
+					if (ypos<=196)
 						ypos<=ypos+4;
 					if (up && rpos>=fpos && rpos<=(fpos+3) && ypos>=(fypos-3) && ypos<=(fypos+3))
 						state<=C4;
 					if(right) begin
 						if(rpos<=798) 
-							rpos<=rpos+2;
+							rpos<=rpos+3;
 					end
 					else if(left) begin
 						if(rpos>=312)
-							rpos<=rpos-2;
+							rpos<=rpos-3;
 					end
 				end 
 
@@ -229,7 +233,7 @@ module block_controller(
 
 				W: 
 				begin
-					if (up || down || right || left)
+					if ( right || left)
 						state<=F1;
 				end 
 			endcase

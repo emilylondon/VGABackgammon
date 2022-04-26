@@ -5,7 +5,7 @@ module block_controller(
 	input bright,
 	input rst,
 	input up, input down, input left, input right, 
-	input [13:0] reel,
+	input [8:0] reel,
 	input [9:0] hCount, vCount,
 	output reg [11:0] rgb);
 	wire q_F1, q_C1, q_F2, q_C2, q_F3, q_C3, q_F4, q_C4, q_W;

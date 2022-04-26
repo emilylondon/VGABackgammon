@@ -45,7 +45,7 @@ module vga_top(
 	wire bright;
 	wire[9:0] hc, vc;
 	wire[15:0] score;
-	wire[13:0] y_out;
+	wire[8:0] y_out;
 	wire up,down,left,right;
 	wire [3:0] anode;
 	wire [11:0] rgb;

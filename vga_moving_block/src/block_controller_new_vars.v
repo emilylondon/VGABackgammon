@@ -15,9 +15,11 @@ module block_controller(
 	wire fish1; wire fish2; wire fish3; wire fish4; 
 	wire buoy; wire lbuoy; wire rbuoy;
 	wire sun;
+	wire coral1; wire coral2; wire coral3;
 	
 	//these two values dictate the center of the block, incrementing and decrementing them leads the block to move in certain directions
-	reg [9:0] rxpos, rypos, fypos, fxpos, fish_timer;
+	reg [9:0] rxpos, rypos, fypos, fxpos;
+	reg [9:0] fish_timer;
 	
 	parameter RED   = 12'b1111_0000_0000;
 	parameter GREEN = 12'b0000_1111_0000;
@@ -26,6 +28,7 @@ module block_controller(
 	parameter ORANGE = 12'b1110_1001_0100;
 	parameter BROWN = 12'b0110_0010_0001;
 	parameter YELLOW = 12'b1111_1111_0000;
+	parameter TAN = 12'b1111_1100_1001;
 	
 	localparam  
 		F1 = 9'b000000001,
@@ -57,6 +60,8 @@ module block_controller(
 			rgb=YELLOW;
 		else if (vCount>=155)
 			rgb = BLUE;
+		else if  (vCount >= 500)
+			rgb = TAN;
 		else	
 			rgb= WHITE;
 	end
@@ -91,6 +96,7 @@ module block_controller(
 			fxpos<=798;
 			fypos<=470;
 			state<=F1;
+			fish_timer <= 0;
 		end
 		else if (clk) begin
 		
@@ -104,18 +110,35 @@ module block_controller(
 
 				F1:
 				begin 
+					// Fish timer
+					if((left || right) && (fish_timer < 401)) begin
+						fish_timer <= fish_timer + 1;
+						fxpos <= 798;
+						
+					end
+
+					if(fish_timer > 400) begin
+							
+						fxpos <= fxpos - 2;
+						if(fxpos == 144) begin
+							fxpos <= 798;
+							fish_timer <= 0;
+						end
+
+
+					end
+
+
 					fypos <= 470;
-					fxpos<=fxpos-2;
-					if (fxpos==144) 
-						fxpos<=798;
 					if (rypos<=466)
 						rypos<=rypos+4;
 					if (up && rxpos>=fxpos && rxpos<=(fxpos+15) && rypos>=(fypos-10) && rypos<=(fypos+10)) begin
 						state<=C1;
 						fypos <= 470;
+						fish_timer <= 0;
 					end
 					if(right) begin
-						if(rxpos<=798) 
+						if(rxpos<=778) 
 							rxpos<=rxpos+3;
 					end
 					else if(left) begin
@@ -141,19 +164,35 @@ module block_controller(
 
 				F2: 
 				begin
-					fypos <= 380;
-					fxpos<=fxpos-2;
-					if(fxpos==144) begin
-						fxpos<=798;
+					// Fish timer
+					if((left || right) && (fish_timer < 401)) begin
+						fish_timer <= fish_timer + 1;
+						fxpos <= 798;
+						
 					end
+
+					if(fish_timer > 400) begin
+							
+						fxpos <= fxpos - 2;
+						if(fxpos == 144) begin
+							fxpos <= 798;
+							fish_timer <= 0;
+						end
+
+
+					end
+
+
+					fypos <= 380;
 					if (rypos<=376)
 						rypos<=rypos+4;
 					if (up && rxpos>=fxpos && rxpos<=(fxpos+10) && rypos>=(fypos-8) && rypos<=(fypos+8)) begin
 						state<=C2;
 						fypos <= 380;
+						fish_timer <= 0;
 					end
 					if(right) begin
-						if(rxpos<=798) 
+						if(rxpos<=778) 
 							rxpos<=rxpos+3;
 					end
 					else if(left) begin
@@ -178,18 +217,33 @@ module block_controller(
 					
 				F3: 
 				begin
+					// Fish timer
+					if((left || right) && (fish_timer < 401)) begin
+						fish_timer <= fish_timer + 1;
+						fxpos <= 798;
+						
+					end
+
+					if(fish_timer > 400) begin
+							
+						fxpos <= fxpos - 2;
+						if(fxpos == 144) begin
+							fxpos <= 798;
+							fish_timer <= 0;
+						end
+
+
+					end
 					fypos <= 290;
-					fxpos<=fxpos-2;
-					if(fxpos==144)
-						fxpos<=798;
 					if (rypos<=286)
 						rypos<=rypos+4;
 					if (up && rxpos>=fxpos && rxpos<=(fxpos+5) && rypos>=(fypos-5) && rypos<=(fypos+5)) begin
 						state<=C3;
 						fypos <= 290;
+						fish_timer <= 0;
 					end
 					if(right) begin
-						if(rxpos<=798) 
+						if(rxpos<=778) 
 							rxpos<=rxpos+3;
 					end
 					else if(left) begin
@@ -215,17 +269,33 @@ module block_controller(
 
 				F4: 
 				begin
-					fypos <= 200;
+					// Fish timer
+					if((left || right) && (fish_timer < 401)) begin
+						fish_timer <= fish_timer + 1;
+						fxpos <= 798;
+						
+					end
+
+					if(fish_timer > 400) begin
+							
+						fxpos <= fxpos - 2;
+						if(fxpos == 144) begin
+							fxpos <= 798;
+							fish_timer <= 0;
+						end
+
+
+					end
 					
-					fxpos<=fxpos-2;
-					if(fxpos==144)
-						fxpos<=798;
+					fypos <= 200;
 					if (rypos<=196)
 						rypos<=rypos+4;
-					if (up && rxpos>=fxpos && rxpos<=(fxpos+3) && rypos>=(fypos-3) && rypos<=(fypos+3))
+					if (up && rxpos>=fxpos && rxpos<=(fxpos+3) && rypos>=(fypos-3) && rypos<=(fypos+3)) begin
 						state<=C4;
+						fish_timer <= 0;
+					end
 					if(right) begin
-						if(rxpos<=798) 
+						if(rxpos<=778) 
 							rxpos<=rxpos+3;
 					end
 					else if(left) begin

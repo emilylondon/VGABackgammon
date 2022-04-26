@@ -28,6 +28,8 @@ module vga_top(
 	input BtnR,
 	input BtnL,
 	input BtnD,
+	input miso,
+	output mosi, sclk, ss,
 	//VGA signal
 	output hSync, vSync,
 	output [3:0] vgaR, vgaG, vgaB,
@@ -43,6 +45,7 @@ module vga_top(
 	wire bright;
 	wire[9:0] hc, vc;
 	wire[15:0] score;
+	wire[13:0] y_out;
 	wire up,down,left,right;
 	wire [3:0] anode;
 	wire [11:0] rgb;
@@ -65,8 +68,8 @@ module vga_top(
 	assign move_clk=DIV_CLK[19]; //slower clock to drive the movement of objects on the vga screen
 	wire [11:0] background;
 	display_controller dc(.clk(ClkPort), .hSync(hSync), .vSync(vSync), .bright(bright), .hCount(hc), .vCount(vc));
-	block_controller sc(.clk(move_clk), .bright(bright), .rst(BtnC), .up(BtnU), .down(BtnD),.left(BtnL),.right(BtnR),.hCount(hc), .vCount(vc), .rgb(rgb));
-	
+	block_controller sc(.clk(move_clk), .bright(bright), .rst(BtnC), .up(BtnU), .down(BtnD),.left(BtnL),.right(BtnR), .reel(y_out), .hCount(hc), .vCount(vc), .rgb(rgb));
+	AcceleromterCtl acc(.SYSCLK(ClkPort), .RESET(BtnC), .SCLK(sclk), .MOSI(mosi), .MISO(miso), .SS(ss), .ACCEL_Y_OUT(y_out));
 
 
 	

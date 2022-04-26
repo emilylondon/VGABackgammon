@@ -4,7 +4,8 @@ module block_controller(
 	input clk, //this clock must be a slow enough clock to view the changing positions of the objects
 	input bright,
 	input rst,
-	input up, input down, input left, input right,
+	input up, input down, input left, input right, 
+	input [13:0] reel,
 	input [9:0] hCount, vCount,
 	output reg [11:0] rgb);
 	wire q_F1, q_C1, q_F2, q_C2, q_F3, q_C3, q_F4, q_C4, q_W;
@@ -133,10 +134,17 @@ module block_controller(
 						fxpos<=798;
 						fypos<=380;
 					end
+					/*
 					if(up) begin
 						fypos<=fypos-2;
 						rypos<=rypos-2;
 					end
+					*/
+					if (reel) begin 
+						fypos<=fypos-2;
+						rypos<=rypos-2;
+					end 
+						
 				end 
 
 				F2: 
@@ -170,10 +178,16 @@ module block_controller(
 						fxpos<=798;
 						fypos<=290;
 					end
+					/*
 					if(up) begin
 						fypos<=fypos-2;
 						rypos<=rypos-2;
 					end
+					*/
+					if (reel) begin 
+						fypos<=fypos-2;
+						rypos<=rypos-2;
+					end 
 				end
 					
 				F3: 
@@ -206,10 +220,16 @@ module block_controller(
 						fxpos<=798;
 						fypos<=200;
 					end
+					/*
 					if(up) begin
 						fypos<=fypos-2;
 						rypos<=rypos-2;
 					end
+					*/
+					if (reel) begin 
+						fypos<=fypos-2;
+						rypos<=rypos-2;
+					end 
 
 				end	
 
@@ -239,10 +259,16 @@ module block_controller(
 					if (fypos<106)
 						state<=W;
 						
+					/*
 					if(up) begin
 						fypos<=fypos-2;
 						rypos<=rypos-2;
 					end
+					*/
+					if (reel) begin 
+						fypos<=fypos-2;
+						rypos<=rypos-2;
+					end 
 				end	
 
 				W: 

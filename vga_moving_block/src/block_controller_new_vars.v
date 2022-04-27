@@ -29,6 +29,7 @@ module block_controller(
 	parameter BROWN = 12'b0110_0010_0001;
 	parameter YELLOW = 12'b1111_1111_0000;
 	parameter TAN = 12'b1111_1100_1001;
+	parameter DARK_GREEN = 12'b0100_1000_0011;
 	
 	localparam  
 		F1 = 9'b000000001,

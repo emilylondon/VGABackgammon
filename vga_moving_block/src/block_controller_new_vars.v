@@ -58,9 +58,12 @@ module block_controller(
             rgb = GREEN;
         else if (sun && state==W) 
             rgb=YELLOW;
+		else if (seaweed1c || seaweed1l || seaweed1r || seaweed2c || seaweed2l || seaweed2r || 
+				 seaweed3c || seaweed3l || seaweed3r)
+			rgb=DARK_GREEN;
         else if (vCount>=155)
             rgb = BLUE;
-        else if  (vCount >= 500)
+        else if  (vCount >= 490)
             rgb = TAN;
         else    
             rgb= WHITE;
@@ -83,6 +86,15 @@ module block_controller(
     assign fish3=vCount>=(fypos-5) && vCount<=(fypos+5) && hCount>=fxpos && hCount<=(fxpos+20);
     assign fish4=vCount>=(fypos-3) && vCount<=(fypos+3) && hCount>=fxpos && hCount<=(fxpos+10);
     assign sun=vCount>=55 && vCount<=95 && hCount>=720 && hCount<=760;
+	assign seaweed1c=vCount>=470 && vCount<=490 && hCount>=245 && hCount<=247;
+	assign seaweed1l=vCount>=475 && vCount<=482 && hCount>=244 && hCount<=246;
+	assign seaweed1r=vCount>=485 && vCount<=492 && hCount>246 && hCount<=248;
+	assign seaweed2c=vCount>=470 && vCount<=490 && hCount>=455 && hCount<=257;
+	assign seaweed2l=vCount>=475 && vCount<=482 && hCount>=454 && hCount<=456;
+	assign seaweed2r=vCount>=485 && vCount<=492 && hCount>=456 && hCount<=458;
+	assign seaweed3c=vCount>=470 && vCount<=490 && hCount>=670 && hCount<=672;
+	assign seaweed3l=vCount>=475 && vCount<=482 && hCount>=669 && hCount<=671;
+	assign seaweed3r=vCount>=485 && vCount<=492 && hCount>=671 && hCount<=673;
     
     //f1ypos = 470, f2ypos = 380, f3ypos=290, f3ypos=200
 

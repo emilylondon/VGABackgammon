@@ -28,8 +28,8 @@ module vga_top(
 	input BtnR,
 	input BtnL,
 	input BtnD,
-	input miso,
-	output mosi, sclk, ss,
+	input MISO,
+	output MOSI, SCLK, CS,
 	//VGA signal
 	output hSync, vSync,
 	output [3:0] vgaR, vgaG, vgaB,
@@ -69,7 +69,7 @@ module vga_top(
 	wire [11:0] background;
 	display_controller dc(.clk(ClkPort), .hSync(hSync), .vSync(vSync), .bright(bright), .hCount(hc), .vCount(vc));
 	block_controller sc(.clk(move_clk), .bright(bright), .rst(BtnC), .up(BtnU), .down(BtnD),.left(BtnL),.right(BtnR), .reel(y_out), .hCount(hc), .vCount(vc), .rgb(rgb));
-	AccelerometerCtl acc(.SYSCLK(ClkPort), .RESET(BtnC), .SCLK(sclk), .MOSI(mosi), .MISO(miso), .SS(ss), .ACCEL_X_OUT(y_out));
+	AccelerometerCtl acc(.SYSCLK(ClkPort), .RESET(BtnC), .SCLK(SCLK), .MOSI(MOSI), .MISO(MISO), .SS(CS), .ACCEL_X_OUT(y_out));
 
 
 	

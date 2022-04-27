@@ -163,14 +163,14 @@ module block_controller(
                     end
                     */
                     if (reel[8:5]>4'b1000) begin 
-                        if reel[8:5]>4'b1001) begin
+                        if (reel[8:5]>4'b1001) begin
                             fypos<=fypos-4;
                             rypos<=rypos-4;
                         end 
-						else begin
-                        fypos<=fypos-2;
-                        rypos<=rypos-2;
-						end
+                        else begin
+                        fypos<=fypos-1;
+                        rypos<=rypos-1;
+                        end
                     end 
                         
                 end 
@@ -229,7 +229,7 @@ module block_controller(
                     end
                     */
                     if (reel[8:5]>4'b1000) begin 
-                        if reel[8:5]>4'b1001) begin
+                        if (reel[8:5]>4'b1001) begin
                             fypos<=fypos-4;
                             rypos<=rypos-4;
                         end
@@ -295,7 +295,7 @@ module block_controller(
                     end
                     */
                     if (reel[8:5]>4'b1000) begin 
-                        if reel[8:5]>4'b1001) begin
+                        if (reel[8:5]>4'b1001) begin
                             fypos<=fypos-4;
                             rypos<=rypos-4;
                         end 
@@ -354,7 +354,7 @@ module block_controller(
                     end
                     */
                     if (reel[8:5]>4'b1000) begin 
-                        if reel[8:5]>4'b1001) begin
+                        if (reel[8:5]>4'b1001) begin
                             fypos<=fypos-4;
                             rypos<=rypos-4;
                         end 

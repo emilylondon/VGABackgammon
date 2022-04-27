@@ -430,23 +430,23 @@ set_property PACKAGE_PIN B12 [get_ports vSync]
 
 ##Accelerometer
 ##Bank = 15, Pin name = IO_L6N_T0_VREF_15,					Sch name = ACL_MISO
-#set_property PACKAGE_PIN D13 [get_ports aclMISO]					
-	#set_property IOSTANDARD LVCMOS33 [get_ports aclMISO]
+set_property PACKAGE_PIN D13 [get_ports aclMISO]					
+	set_property IOSTANDARD LVCMOS33 [get_ports aclMISO]
 ##Bank = 15, Pin name = IO_L2N_T0_AD8N_15,					Sch name = ACL_MOSI
-#set_property PACKAGE_PIN B14 [get_ports aclMOSI]					
-	#set_property IOSTANDARD LVCMOS33 [get_ports aclMOSI]
+set_property PACKAGE_PIN B14 [get_ports aclMOSI]					
+	set_property IOSTANDARD LVCMOS33 [get_ports aclMOSI]
 ##Bank = 15, Pin name = IO_L12P_T1_MRCC_15,					Sch name = ACL_SCLK
-#set_property PACKAGE_PIN D15 [get_ports aclSCK]					
-	#set_property IOSTANDARD LVCMOS33 [get_ports aclSCK]
+set_property PACKAGE_PIN D15 [get_ports aclSCK]					
+	set_property IOSTANDARD LVCMOS33 [get_ports aclSCK]
 ##Bank = 15, Pin name = IO_L12N_T1_MRCC_15,					Sch name = ACL_CSN
-#set_property PACKAGE_PIN C15 [get_ports aclSS]						
-	#set_property IOSTANDARD LVCMOS33 [get_ports aclSS]
+set_property PACKAGE_PIN C15 [get_ports aclSS]						
+	set_property IOSTANDARD LVCMOS33 [get_ports aclSS]
 ##Bank = 15, Pin name = IO_L20P_T3_A20_15,					Sch name = ACL_INT1
-#set_property PACKAGE_PIN C16 [get_ports aclInt1]					
-	#set_property IOSTANDARD LVCMOS33 [get_ports aclInt1]
+set_property PACKAGE_PIN C16 [get_ports aclInt1]					
+	set_property IOSTANDARD LVCMOS33 [get_ports aclInt1]
 ##Bank = 15, Pin name = IO_L11P_T1_SRCC_15,					Sch name = ACL_INT2
-#set_property PACKAGE_PIN E15 [get_ports aclInt2]					
-	#set_property IOSTANDARD LVCMOS33 [get_ports aclInt2]
+set_property PACKAGE_PIN E15 [get_ports aclInt2]					
+	set_property IOSTANDARD LVCMOS33 [get_ports aclInt2]
 
 
 
